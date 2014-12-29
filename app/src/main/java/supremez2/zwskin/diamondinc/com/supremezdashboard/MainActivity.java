@@ -82,10 +82,10 @@ public class MainActivity extends ActionBarActivity
             // if the drawer is not showing. Otherwise, let the drawer
             // decide what to show in the action bar.
             MenuInflater inflater = new MenuInflater(this);
-            inflater.inflate(R.menu.main,menu);
+            inflater.inflate(R.menu.main, menu);
 
             MenuItem searchItem = menu.findItem(R.id.action_search);
-            if(searchItem != null) {
+            if (searchItem != null) {
                 SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
                 searchView.setOnQueryTextListener(this);
             }
@@ -99,7 +99,7 @@ public class MainActivity extends ActionBarActivity
 
     @Override
     public void onBackPressed() {
-        if(mDrawerLayout.isDrawerOpen(Gravity.START)){
+        if (mDrawerLayout.isDrawerOpen(Gravity.START)) {
             mDrawerLayout.closeDrawers();
             return;
         }
