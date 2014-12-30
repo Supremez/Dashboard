@@ -8,9 +8,5 @@
         <item name="colorPrimary">@color/indigo_500</item>
         <item name="colorPrimaryDark">@color/indigo_800</item>
         <item name="windowActionBar">false</item>
-        <item name="searchViewStyle">@style/MySearchViewStyle</item>
-    </style>
-    <style name="MySearchViewStyle" parent="Widget.AppCompat.SearchView">
-
     </style>
 </resources>
