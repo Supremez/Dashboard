@@ -9,4 +9,4 @@ android:
 	- android-21
 
 
-script: ./gradlew build connectedCheck
+script: gradle build connectedCheck
