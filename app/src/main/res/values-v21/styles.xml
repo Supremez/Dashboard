@@ -5,8 +5,8 @@
         <!-- Customize your theme here. -->
         <!-- Set AppCompat’s color theming attrs -->
 
-        <item name="colorPrimary">@color/indigo_500</item>
-        <item name="colorPrimaryDark">@color/indigo_800</item>
+        <item name="colorPrimary">@color/blue_grey_600</item>
+        <item name="colorPrimaryDark">@color/blue_grey_600</item>
         <item name="windowActionBar">false</item>
     </style>
 </resources>
