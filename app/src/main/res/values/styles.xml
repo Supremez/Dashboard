@@ -2,12 +2,20 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="@style/Theme.AppCompat">
+        <item name="android:windowNoTitle">true</item>
+
         <!-- Customize your theme here. -->
         <!-- Set AppCompat’s color theming attrs -->
 
-        <item name="colorPrimary">@color/blue_grey_600</item>
-        <item name="colorPrimaryDark">@color/blue_grey_600</item>
+        <item name="colorPrimary">@color/indigo_A400</item>
+        <item name="colorPrimaryDark">@color/indigo_A400</item>
         <item name="windowActionBar">false</item>
+    </style>
+
+
+    <style name="ActionBarPopupThemeOverlay" parent="ThemeOverlay.AppCompat.Light" >
+        <item name="android:background">#fff</item>
+        <item name="android:textColor">#000</item>
     </style>
 
 </resources>
