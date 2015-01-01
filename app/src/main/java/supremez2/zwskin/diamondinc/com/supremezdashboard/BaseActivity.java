@@ -17,7 +17,6 @@ public abstract class BaseActivity extends ActionBarActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar != null) {
             setSupportActionBar(toolbar);
-
         }
     }
 

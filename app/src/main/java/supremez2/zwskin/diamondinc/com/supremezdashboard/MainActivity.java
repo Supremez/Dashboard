@@ -23,13 +23,12 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.support.v7.widget.CardView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+
 
 
 public class MainActivity extends BaseActivity {
-
-
-
-
 
     @Override
     protected int getLayoutResource() {
