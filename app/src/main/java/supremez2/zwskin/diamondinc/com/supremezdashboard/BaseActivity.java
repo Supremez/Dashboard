@@ -3,6 +3,14 @@ package supremez2.zwskin.diamondinc.com.supremezdashboard;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.AdapterView;
+import android.support.v7.widget.CardView;
+
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+import com.nineoldandroids.animation.Animator;
 
 
 public abstract class BaseActivity extends ActionBarActivity {
@@ -17,6 +25,12 @@ public abstract class BaseActivity extends ActionBarActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar != null) {
             setSupportActionBar(toolbar);
+
+            YoYo.with(Techniques.Shake)
+                    .duration(2100)
+                    .playOn(findViewById(R.id.imageView3));
+
+
         }
     }
 

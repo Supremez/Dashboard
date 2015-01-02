@@ -7,8 +7,8 @@
         <!-- Customize your theme here. -->
         <!-- Set AppCompat’s color theming attrs -->
 
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorPrimary">@color/blue_grey_500</item>
+        <item name="colorPrimaryDark">@color/blue_grey_700</item>
         <item name="windowActionBar">false</item>
     </style>
 
