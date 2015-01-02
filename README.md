@@ -2,4 +2,4 @@ Dashboard
 =========
 
 Current status:
-![](http://i.imgur.com/u3OxSjd.png)
+![](http://i.imgur.com/dt5v70al.png)
