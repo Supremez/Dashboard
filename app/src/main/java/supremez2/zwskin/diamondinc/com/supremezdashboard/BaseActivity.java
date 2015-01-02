@@ -1,5 +1,6 @@
 package supremez2.zwskin.diamondinc.com.supremezdashboard;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -32,6 +33,11 @@ public abstract class BaseActivity extends ActionBarActivity {
 
 
         }
+    }
+
+    public void wallpaper(View view) {
+        Intent intent = new Intent(this, com.antonioleiva.materialeverywhere.HomeActivity.class);
+        startActivity(intent);
     }
 
 

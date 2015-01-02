@@ -164,7 +164,8 @@
                 android:layout_below="@+id/relativeLayout"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp">
+                android:layout_marginRight="12dp"
+                android:onClick="wallpaper">
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
