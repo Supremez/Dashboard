@@ -16,6 +16,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- START Zooper Widget definitions -->
+        <!--
+        This is the templates activity, if you are developing a skin project
+        for a launcher or something else do the following:
+        - Add both activity and provider (so copy from START to END in your AndroidManifest.xml)
+        - Copy the source tree org.zooper.zwskin in your src directory
+        - Copy zooper.xml in res/values
+        - Add template and resources to the assets folder
+        - If skin is commercial also uncomment <provider> below and follow instructions
+        -->
+        <activity
+            android:name="org.zooper.zwskin.ZooperTemplate"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="org.zooper.zw.TEMPLATES" />
+            </intent-filter>
+        </activity>
+        <!--
+        COMMERCIAL SKINS ONLY:
+        - Uncomment provider entry
+        - Set android:authorities="PACKAGENAME.zwprovider"
+          If package is "my.pkg.name.zwskin.sample" set it to "my.pkg.name.zwskin.sample.zwprovider"
+        -->
+        <provider
+                android:name="org.zooper.zwskin.TemplateProvider"
+                android:authorities="supremez2.zwskin.diamondinc.com.supremezdashboard"/>
+        <!-- END Zooper Widget definition -->
     </application>
 
 </manifest>

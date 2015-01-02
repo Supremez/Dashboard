@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <!-- These info will be used in the available skins list -->
+  <string name="zooper_pack_name">@string/app_name</string>
+  <string name="zooper_pack_desc">Pack Description</string>
+  <string name="zooper_pack_author">Pack Author</string>
+
+  <!-- If set to 0 user will not be allowed to save this template -->
+  <integer name="zooper_pack_allowsave">1</integer>
+
+  <!-- This is the icon that will be shown in the plugin list, by default the app one is used -->
+  <drawable name="zooper_pack_icon">@drawable/ic_launcher</drawable>
+</resources>
