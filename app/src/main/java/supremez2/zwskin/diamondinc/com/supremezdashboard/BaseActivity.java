@@ -5,19 +5,11 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.widget.AdapterView;
-import android.support.v7.widget.CardView;
-import android.widget.ListView;
 import android.widget.ScrollView;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.melnykov.fab.FloatingActionButton;
-import com.melnykov.fab.ObservableScrollView;
-import com.nineoldandroids.animation.Animator;
-
-import java.util.Observable;
 
 
 public abstract class BaseActivity extends ActionBarActivity {
@@ -27,6 +19,8 @@ public abstract class BaseActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(getLayoutResource());
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar != null) {
@@ -55,6 +49,7 @@ public abstract class BaseActivity extends ActionBarActivity {
        });
 
     }
+
 
     public void wallpaper(View view) {
       Intent intent = new Intent(this, com.antonioleiva.materialeverywhere.HomeActivity.class);
