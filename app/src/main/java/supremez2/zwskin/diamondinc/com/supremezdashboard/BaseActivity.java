@@ -45,6 +45,7 @@ public abstract class BaseActivity extends ActionBarActivity {
 
         //TODO Attatch FAB to ScrollView
         //fab.attachToScrollView(scrollView);
+
        fab.setOnClickListener(new View.OnClickListener() {
 
            public void onClick(View v) {
