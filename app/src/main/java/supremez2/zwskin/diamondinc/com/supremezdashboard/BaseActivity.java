@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ScrollView;
 
 import com.daimajia.androidanimations.library.Techniques;
@@ -50,6 +51,10 @@ public abstract class BaseActivity extends ActionBarActivity {
 
            public void onClick(View v) {
                //TODO Add click action
+
+               //For example: Start Wallpaper Home Activity
+               Intent intent=new Intent(v.getContext(),com.antonioleiva.materialeverywhere.HomeActivity.class);
+               startActivity(intent);
 
            }
        });
