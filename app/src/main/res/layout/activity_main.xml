@@ -7,14 +7,13 @@
     android:id="@+id/container"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#e5e5e5"
     tools:context=".MyActivity"
-    xmlns:fab="http://schemas.android.com/apk/res-auto">
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:background="@color/grey_white_1000">
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"/>
-
 
     <ScrollView
         android:layout_width="wrap_content"
@@ -37,37 +36,37 @@
 
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="210dp"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/item_height"
         android:id="@+id/imageView2"
         android:layout_gravity="center|top"
-        android:background="@color/blue_grey_500"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY" />
+        android:scaleType="centerCrop"
+        android:cropToPadding="false"
+        android:src="@drawable/t3"
+        android:clickable="false" />
 
             <ImageView
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:id="@+id/imageView3"
                 android:layout_gravity="center|top"
-                android:background="@drawable/supremezicon"
-                android:layout_marginTop="30dp"
-                android:adjustViewBounds="true"
+                android:layout_marginTop="50dp"
+                android:adjustViewBounds="false"
                 android:scaleType="fitXY"
-                android:layout_alignTop="@+id/imageView2"
                 android:layout_alignParentLeft="false"
-                android:layout_alignParentStart="true"
+                android:layout_alignParentStart="false"
                 android:layout_centerInParent="true"
                 android:layout_alignParentTop="false"
-                android:layout_alignStart="@id/action_bar"
-                android:paddingStart="@dimen/abc_action_bar_default_height_material" />
+                android:layout_alignTop="@+id/imageView2"
+                android:src="@drawable/supremezclock" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="114dp"
                 android:layout_gravity="center"
                 android:layout_below="@+id/imageView3"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:id="@+id/relativeLayout"
                 android:layout_centerInParent="true"
                 android:layout_marginLeft="12dp"
@@ -78,8 +77,8 @@
                     android:layout_gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    card_view:cardCornerRadius="2dp"
-                    card_view:cardElevation="4dp"
+                    card_view:cardCornerRadius="1dp"
+                    card_view:cardElevation="5dp"
                     card_view:cardUseCompatPadding="true"
                     android:background="#fff"
                     style="@style/CardView.Light">
@@ -106,7 +105,7 @@
                             android:id="@+id/info_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Supremez consists of a wide range of wallpapers"
+                            android:text="Supremez consists of a wide range of wallpapers and"
                             android:textColor="#212121"
                             android:singleLine="false"
                             android:layout_marginTop="44dp"
@@ -114,14 +113,13 @@
                             android:layout_marginLeft="16dp"
                             android:maxLines="4"
                             android:textSize="12dp"
-                            android:minLines="1"
                             android:typeface="normal" />
 
                         <TextView
                             android:id="@+id/info_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="and clock widgets selection and will be constantly"
+                            android:text="clocks widgets selection and will be constantly updated"
                             android:textColor="#212121"
                             android:singleLine="false"
                             android:layout_marginTop="56dp"
@@ -136,7 +134,7 @@
                             android:id="@+id/info_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="updated with new widgets and wallpapers."
+                            android:text="with new widgets and wallpapers."
                             android:textColor="#212121"
                             android:singleLine="false"
                             android:layout_marginTop="68dp"
@@ -158,8 +156,8 @@
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-                card_view:cardCornerRadius="2dp"
-                card_view:cardElevation="4dp"
+                card_view:cardCornerRadius="1dp"
+                card_view:cardElevation="5dp"
                 card_view:cardUseCompatPadding="true"
                 android:background="#fff"
                 style="@style/CardView.Light"
@@ -177,11 +175,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="160dp"
                         android:id="@+id/imageView"
-                        android:background="@drawable/poly_db"
-                        android:scaleType="centerCrop" />
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/anchorthumbf" />
 
                     <TextView
-                        android:id="@+id/info_text"
+                        android:id="@+id/wallpaper"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="WALLPAPERS"
