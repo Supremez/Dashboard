@@ -82,7 +82,7 @@ public class HomeActivity extends BaseActivity {
     private static class GridViewAdapter extends BaseAdapter {
 
         @Override public int getCount() {
-            return 10;
+            return 20;
         }
 
         @Override public Object getItem(int i) {
