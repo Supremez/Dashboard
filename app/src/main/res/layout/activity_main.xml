@@ -167,7 +167,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
-                android:onClick="wallpaper">
+                android:layout_marginTop="12dp">
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
@@ -182,12 +182,12 @@
 
                     <TextView
                         android:id="@+id/info_text"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="WALLPAPERS"
                         android:textColor="@color/blue_600"
                         android:singleLine="false"
-                        android:layout_marginTop="175dp"
+                        android:layout_marginTop="173dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="12dp"
                         android:maxLines="4"
@@ -195,10 +195,12 @@
                         android:layout_alignParentLeft="false"
                         android:layout_alignParentRight="false"
                         android:layout_alignParentTop="false"
-                        android:gravity="right"
-                        android:typeface="normal"
                         android:textIsSelectable="false"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:onClick="wallpaper"
+                        android:gravity="left"
+                        android:textColorHighlight="@color/pink_A400"
+                        android:typeface="normal" />
 
 
                 </RelativeLayout>
@@ -221,12 +223,12 @@
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
-            android:layout_margin="16dp"
-            android:src="@drawable/ic_action_picture"
-            fab:fab_colorNormal="@color/primary"
-            fab:fab_colorPressed="@color/primary_dark"
-            fab:fab_colorRipple="@color/grey_100" />
+            android:layout_margin="20dp"
+            android:src="@drawable/ic_collections_white_36dp"
+            fab:fab_colorNormal="@color/pink_A400"
+            fab:fab_colorPressed="@color/pink_600"
+            fab:fab_colorRipple="@color/grey_white_1000"
+            android:layout_gravity="bottom|right" />
     </FrameLayout>
 
 </RelativeLayout>
