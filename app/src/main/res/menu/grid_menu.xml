@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.antonioleiva.materialeverywhere.HomeActivity" >
+
+    <group android:id="@+id/group1" android:checkableBehavior="single">
+        <item
+            android:id="@+id/oneColumn"
+            android:orderInCategory="100"
+            android:title="@string/one_column"
+            app:showAsAction="never"/>
+        <item
+            android:id="@+id/twoColumn"
+            android:orderInCategory="200"
+            android:title="@string/two_column"
+            app:showAsAction="never" android:checked="true"/>
+        <item
+            android:id="@+id/threeColumn"
+            android:orderInCategory="300"
+            android:title="@string/three_column"
+            app:showAsAction="never" />
+
+    </group>
+
+</menu>

@@ -8,4 +8,8 @@
     <string name="apply_wall">Set Wallpaper</string>
     <string name="description">Supremez consist in of a wide range of wallpapers and clockswidgets</string>
 
+    <string name="one_column">One Column</string>
+    <string name="two_column">Two Column</string>
+    <string name="three_column">Three Column</string>
+
 </resources>
