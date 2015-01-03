@@ -30,6 +30,10 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.3.4'
     compile 'com.melnykov:floatingactionbutton:1.1.0'
     compile 'com.github.ksoichiro:android-observablescrollview:1.4.0'
+<<<<<<< HEAD
 
 
+=======
+    compile 'uk.co.chrisjenx:calligraphy:1.2.0'
+>>>>>>> FETCH_HEAD
 }
