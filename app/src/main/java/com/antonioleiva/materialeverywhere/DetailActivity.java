@@ -16,7 +16,11 @@
 
 package com.antonioleiva.materialeverywhere;
 
+import android.app.WallpaperManager;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
@@ -25,8 +29,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
+
+import java.io.IOException;
 
 import supremez2.zwskin.diamondinc.com.supremezdashboard.R;
 
@@ -52,7 +59,7 @@ public class DetailActivity extends BaseActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.wallpaper, menu);
         return true;
     }
 
@@ -65,6 +72,27 @@ public class DetailActivity extends BaseActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+        if (id == R.id.set_wall) {
+
+            ImageView image = (ImageView) findViewById(R.id.image);
+            Bitmap mBitmap = ((BitmapDrawable)image.getDrawable()).getBitmap();
+            WallpaperManager myWallpaperManager = WallpaperManager
+                    .getInstance(getApplicationContext());
+
+            try {
+                myWallpaperManager.setBitmap(mBitmap);
+                Toast.makeText(DetailActivity.this, "Wallpaper set",
+                        Toast.LENGTH_SHORT).show();
+            } catch (IOException e) {
+                Toast.makeText(DetailActivity.this,
+                        "Error setting wallpaper", Toast.LENGTH_SHORT)
+                        .show();
+            }
+            return true;
+
+
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -76,4 +104,6 @@ public class DetailActivity extends BaseActivity {
         intent.putExtra(EXTRA_IMAGE, url);
         ActivityCompat.startActivity(activity, intent, options.toBundle());
     }
+
+
 }

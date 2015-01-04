@@ -82,7 +82,7 @@ public class HomeActivity extends BaseActivity {
     private static class GridViewAdapter extends BaseAdapter {
 
         @Override public int getCount() {
-            return 10;
+            return 32;
         }
 
         @Override public Object getItem(int i) {
@@ -100,7 +100,7 @@ public class HomeActivity extends BaseActivity {
                         .inflate(R.layout.grid_item, viewGroup, false);
             }
 
-            String imageUrl = "http://lorempixel.com/800/600/sports/" + String.valueOf(i + 1);
+            String imageUrl = "http://tbremer.pf-control.de/walls/" + String.valueOf(i + 1) + ".png";
             view.setTag(imageUrl);
 
             ImageView image = (ImageView) view.findViewById(R.id.image);

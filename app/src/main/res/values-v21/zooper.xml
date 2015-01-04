@@ -3,8 +3,8 @@
 
   <!-- These info will be used in the available skins list -->
   <string name="zooper_pack_name">@string/app_name</string>
-  <string name="zooper_pack_desc">Pack Description</string>
-  <string name="zooper_pack_author">Pack Author</string>
+  <string name="zooper_pack_desc">Description</string>
+  <string name="zooper_pack_author">Arturo MB</string>
 
   <!-- If set to 0 user will not be allowed to save this template -->
   <integer name="zooper_pack_allowsave">1</integer>

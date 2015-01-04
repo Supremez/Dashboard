@@ -28,12 +28,12 @@
     <ImageView
         android:id="@+id/image"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="match_parent"
         android:transitionName="photo_hero"
         android:layout_below="@id/toolbar"
         android:scaleType="centerCrop"/>
 
-    <TextView
+    <!-- <TextView
         android:id="@+id/text"
         android:text="@string/apply_wall"
         android:layout_width="wrap_content"
@@ -41,6 +41,6 @@
         android:layout_below="@+id/image"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:textSize="20dp" />
+        android:textSize="20dp" /> -->
 
 </RelativeLayout>
