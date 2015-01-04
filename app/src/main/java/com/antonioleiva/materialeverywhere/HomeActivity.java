@@ -16,8 +16,13 @@
 
 package com.antonioleiva.materialeverywhere;
 
+import android.graphics.Bitmap;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.graphics.Palette;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -38,6 +43,7 @@ import supremez2.zwskin.diamondinc.com.supremezdashboard.R;
 public class HomeActivity extends BaseActivity {
 
     private DrawerLayout drawer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,7 +118,31 @@ public class HomeActivity extends BaseActivity {
             TextView text = (TextView) view.findViewById(R.id.text);
             text.setText(getItem(i).toString());
 
+
+            //TODO Modify Palette, doesn't work yet. Example code:
+           /* Palette.generateAsync(bitmap,
+                    new Palette.PaletteAsyncListener() {
+                        @Override
+
+                        public void onGenerated(Palette palette) {
+                            Palette.Swatch vibrant =
+                                    palette.getMutedSwatch();
+                            if (vibrant != null) {
+
+                                gridView.findViewById(R.id.gridView).setBackgroundColor(
+                                        vibrant.getRgb());
+                            }
+                        }
+                    }); */
+
+
             return view;
         }
     }
+
+
+
+
+
+
 }
