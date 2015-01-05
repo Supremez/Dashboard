@@ -49,7 +49,7 @@ public abstract class BaseActivity extends ActionBarActivity {
         fab.setOnClickListener(new View.OnClickListener() {
 
            public void onClick(View v) {
-               //TODO Add click action
+
 
                //For example: Start Wallpaper Home Activity
                Intent intent=new Intent(v.getContext(),com.antonioleiva.materialeverywhere.HomeActivity.class);
