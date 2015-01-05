@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.melnykov.fab.ObservableScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="fill_parent"
@@ -69,11 +71,11 @@
 
 
             <RelativeLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="114dp"
                 android:layout_gravity="center"
                 android:layout_below="@+id/imageView3"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="28dp"
                 android:id="@+id/rlmaster"
                 android:layout_centerInParent="true"
                 android:layout_marginLeft="12dp"
@@ -86,6 +88,7 @@
                     android:layout_height="200dp"
                     card_view:cardCornerRadius="2dp"
                     card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true"
                     android:background="#fff">
 
                     <RelativeLayout
@@ -161,7 +164,7 @@
                 android:id="@+id/card_view"
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
-                android:layout_height="240dp"
+                android:layout_height="260dp"
                 card_view:cardCornerRadius="2dp"
                 card_view:cardElevation="5dp"
                 card_view:cardUseCompatPadding="true"
@@ -189,11 +192,11 @@
                         android:text="PURCHASE"
                         android:textColor="@color/teal_A400"
                         android:singleLine="false"
-                        android:layout_marginTop="193dp"
+                        android:layout_marginTop="216dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="12dp"
                         android:maxLines="4"
-                        android:textSize="16dp"
+                        android:textSize="14dp"
                         android:layout_alignParentLeft="false"
                         android:layout_alignParentRight="false"
                         android:layout_alignParentTop="false"
@@ -209,30 +212,29 @@
                         android:text="Supremez V1"
                         android:textColor="#212121"
                         android:singleLine="false"
-                        android:layout_marginTop="170dp"
+                        android:layout_marginTop="168dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="12dp"
                         android:maxLines="4"
-                        android:textSize="16dp"
+                        android:textSize="16sp"
                         android:layout_alignParentLeft="false"
                         android:layout_alignParentRight="false"
                         android:layout_alignParentTop="false"
                         android:textIsSelectable="false"
-                        android:textStyle="bold"
                         android:layout_alignLeft="@+id/imageView" />
 
                     <TextView
                         android:id="@+id/sp1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="Check out the first version of Supremez"
+                        android:text="Check out the first version of Supremez at the Play Store"
                         android:textColor="#212121"
                         android:singleLine="false"
-                        android:layout_marginTop="196dp"
+                        android:layout_marginTop="193dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="12dp"
                         android:maxLines="4"
-                        android:textSize="12dp"
+                        android:textSize="12sp"
                         android:layout_alignParentLeft="false"
                         android:layout_alignParentRight="false"
                         android:layout_alignParentTop="false"
@@ -254,7 +256,7 @@
                 style="@style/CardView.Light"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
-                android:layout_marginTop="264dp"
+                android:layout_marginTop="280dp"
                 android:layout_centerInParent="true"
                 android:layout_below="@+id/rlmaster">
 
@@ -305,4 +307,4 @@
 
     </LinearLayout>
 
-</ScrollView>
+</com.melnykov.fab.ObservableScrollView>
