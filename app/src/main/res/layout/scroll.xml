@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="fill_parent"
     android:layout_marginTop="@dimen/abc_action_bar_default_height_material"
     android:fillViewport="true"
     android:id="@+id/scroll"
@@ -20,7 +21,7 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            android:layout_height="1000dp"
             android:orientation="vertical">
 
 
@@ -86,9 +87,7 @@
                     android:layout_height="200dp"
                     card_view:cardCornerRadius="2dp"
                     card_view:cardElevation="5dp"
-                    card_view:cardUseCompatPadding="true"
-                    android:background="#fff"
-                    style="@style/CardView.Light">
+                    android:background="#fff">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
@@ -170,7 +169,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="12dp"
                 android:layout_below="@+id/rlmaster">
 
                 <RelativeLayout
@@ -256,7 +255,7 @@
                 style="@style/CardView.Light"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
-                android:layout_marginTop="252dp"
+                android:layout_marginTop="264dp"
                 android:layout_centerInParent="true"
                 android:layout_below="@+id/rlmaster">
 
