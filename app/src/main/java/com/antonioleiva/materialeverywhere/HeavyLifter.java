@@ -1,13 +1,13 @@
 package com.antonioleiva.materialeverywhere;
 
-import java.io.IOException;
-
 import android.app.WallpaperManager;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.util.Log;
+
+import java.io.IOException;
 
 /**
  * <b>This class uses Threads</b>

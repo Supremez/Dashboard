@@ -16,13 +16,8 @@
 
 package com.antonioleiva.materialeverywhere;
 
-import android.graphics.Bitmap;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.graphics.Palette;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;

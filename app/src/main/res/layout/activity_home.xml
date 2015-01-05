@@ -40,7 +40,7 @@
             android:padding="4dp"
             android:clipToPadding="false"
             android:columnWidth="@dimen/item_width"
-            android:numColumns="2"
+            android:numColumns="1"
             android:horizontalSpacing="4dp"
             android:verticalSpacing="4dp"
             android:stretchMode="columnWidth"

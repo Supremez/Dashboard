@@ -2,5 +2,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/set_wall" android:title="@string/apply_wall"
-        android:orderInCategory="1" app:showAsAction="always" android:icon="@drawable/ic_action_picture" />
+        android:orderInCategory="1" app:showAsAction="always" android:icon="@drawable/ic_now_wallpaper_white_36dp" />
 </menu>

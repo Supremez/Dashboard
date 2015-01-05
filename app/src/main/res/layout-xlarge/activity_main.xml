@@ -121,7 +121,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="16dp"
                         android:maxLines="4"
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         android:typeface="normal" />
 
                         <TextView
@@ -185,7 +185,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="12dp"
                 android:layout_below="@+id/rlmaster">
 
                 <RelativeLayout
@@ -206,11 +206,11 @@
                         android:text="PURCHASE"
                         android:textColor="@color/teal_A400"
                         android:singleLine="false"
-                        android:layout_marginTop="193dp"
+                        android:layout_marginTop="190dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="12dp"
                         android:maxLines="4"
-                        android:textSize="16dp"
+                        android:textSize="18sp"
                         android:layout_alignParentLeft="false"
                         android:layout_alignParentRight="false"
                         android:layout_alignParentTop="false"
@@ -226,16 +226,17 @@
                         android:text="Supremez V1"
                         android:textColor="#212121"
                         android:singleLine="false"
-                        android:layout_marginTop="170dp"
+                        android:layout_marginTop="172dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="12dp"
                         android:maxLines="4"
-                        android:textSize="16dp"
+                        android:textSize="14sp"
                         android:layout_alignParentLeft="false"
                         android:layout_alignParentRight="false"
                         android:layout_alignParentTop="false"
                         android:textIsSelectable="false"
                         android:textStyle="bold"
+                        android:typeface="normal"
                         android:layout_alignLeft="@+id/imageView" />
 
                     <TextView
@@ -245,16 +246,18 @@
                         android:text="Check out the first version of Supremez"
                         android:textColor="#212121"
                         android:singleLine="false"
-                        android:layout_marginTop="196dp"
+                        android:layout_marginTop="195dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="12dp"
                         android:maxLines="4"
-                        android:textSize="12dp"
+                        android:textSize="10sp"
                         android:layout_alignParentLeft="false"
                         android:layout_alignParentRight="false"
                         android:layout_alignParentTop="false"
                         android:textIsSelectable="false"
-                        android:typeface="normal" />
+                        android:typeface="normal"
+                        android:layout_alignLeft="@+id/sp1"
+                        android:layout_below="@+id/sp1" />
 
                 </RelativeLayout>
 
@@ -271,7 +274,7 @@
                 style="@style/CardView.Light"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
-                android:layout_marginTop="252dp"
+                android:layout_marginTop="264dp"
                 android:layout_centerInParent="true"
                 android:layout_below="@+id/rlmaster">
 
