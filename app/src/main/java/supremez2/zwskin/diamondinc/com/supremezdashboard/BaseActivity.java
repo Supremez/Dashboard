@@ -44,10 +44,9 @@ public abstract class BaseActivity extends ActionBarActivity {
         ScrollView scrollView = (ScrollView) findViewById(R.id.scroll);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
-        //TODO Attatch FAB to ScrollView
         fab.attachToScrollView((com.melnykov.fab.ObservableScrollView) scrollView);
 
-       fab.setOnClickListener(new View.OnClickListener() {
+        fab.setOnClickListener(new View.OnClickListener() {
 
            public void onClick(View v) {
                //TODO Add click action
