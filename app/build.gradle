@@ -31,7 +31,7 @@ dependencies {
     compile 'com.melnykov:floatingactionbutton:1.1.0'
     compile 'com.github.ksoichiro:android-observablescrollview:1.4.0'
     compile 'uk.co.chrisjenx:calligraphy:1.2.0'
-    compile 'com.android.support:palette-v7:21.0.+'
+    compile 'com.android.support:palette-v7:+'
     compile 'com.squareup.okhttp:okhttp:2.+'
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.+'
 
