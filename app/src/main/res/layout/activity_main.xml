@@ -8,7 +8,7 @@
     android:layout_height="wrap_content"
     tools:context=".MyActivity"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
-    android:background="@color/grey_white_1000">
+    android:background="#181818">
 
     <include
         android:id="@+id/toolbar"
@@ -30,8 +30,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:src="@drawable/ic_collections_white_36dp"
-            fab:fab_colorNormal="@color/pink_A400"
-            fab:fab_colorPressed="@color/pink_600"
+            fab:fab_colorNormal="@color/teal_A400"
+            fab:fab_colorPressed="@color/teal_A400"
             fab:fab_colorRipple="@color/grey_white_1000"
             android:layout_gravity="bottom|right" />
     </FrameLayout>

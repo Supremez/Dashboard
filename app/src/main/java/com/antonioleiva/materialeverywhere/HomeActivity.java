@@ -88,7 +88,7 @@ public class HomeActivity extends BaseActivity {
         }
 
         @Override public Object getItem(int i) {
-            return "Item " + String.valueOf(i + 1);
+            return "WALL " + String.valueOf(i + 1);
         }
 
         @Override public long getItemId(int i) {
