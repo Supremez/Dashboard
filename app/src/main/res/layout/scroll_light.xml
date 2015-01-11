@@ -22,7 +22,7 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="1000dp"
+            android:layout_height="848dp"
             android:orientation="vertical">
 
 
@@ -94,7 +94,8 @@
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:id="@+id/rl1">
+                        android:id="@+id/rl1"
+                        android:background="#fff">
 
                         <TextView
                             android:id="@+id/info_text"
@@ -164,19 +165,20 @@
                 android:id="@+id/card_view"
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
-                android:layout_height="260dp"
+                android:layout_height="270dp"
                 card_view:cardCornerRadius="2dp"
                 card_view:cardElevation="5dp"
                 card_view:cardUseCompatPadding="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 android:layout_below="@+id/rlmaster">
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
+                    android:layout_height="fill_parent"
+                    android:background="#fff">
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -190,9 +192,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="PURCHASE"
-                        android:textColor="@color/teal_A400"
+                        android:textColor="@color/pink_A400"
                         android:singleLine="false"
-                        android:layout_marginTop="216dp"
+                        android:layout_marginTop="226dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="12dp"
                         android:maxLines="4"
@@ -209,14 +211,14 @@
                         android:id="@+id/sp1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Supremez V1"
+                        android:text="Supremez "
                         android:textColor="#212121"
                         android:singleLine="false"
                         android:layout_marginTop="168dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="12dp"
                         android:maxLines="4"
-                        android:textSize="16sp"
+                        android:textSize="20dp"
                         android:layout_alignParentLeft="false"
                         android:layout_alignParentRight="false"
                         android:layout_alignParentTop="false"
@@ -230,11 +232,11 @@
                         android:text="Check out the first version of Supremez at the Play Store"
                         android:textColor="#212121"
                         android:singleLine="false"
-                        android:layout_marginTop="193dp"
+                        android:layout_marginTop="200dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="12dp"
                         android:maxLines="4"
-                        android:textSize="12sp"
+                        android:textSize="12dp"
                         android:layout_alignParentLeft="false"
                         android:layout_alignParentRight="false"
                         android:layout_alignParentTop="false"
@@ -249,20 +251,20 @@
                 android:id="@+id/card_view"
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
+                android:layout_height="270dp"
                 card_view:cardCornerRadius="2dp"
                 card_view:cardElevation="5dp"
                 card_view:cardUseCompatPadding="true"
-                style="@style/CardView.Light"
+                android:layout_centerHorizontal="true"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
-                android:layout_marginTop="280dp"
-                android:layout_centerInParent="true"
+                android:layout_marginTop="290dp"
                 android:layout_below="@+id/rlmaster">
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
+                    android:layout_height="fill_parent"
+                    android:background="#fff">
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -272,32 +274,65 @@
                         android:src="@drawable/wcard" />
 
                     <TextView
-                        android:id="@+id/wallpaper"
+                        android:id="@+id/sp1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="WALLPAPERS"
-                        android:textColor="@color/dark_purple_600"
+                        android:text="APPLY"
+                        android:textColor="@color/pink_A400"
                         android:singleLine="false"
-                        android:layout_marginTop="173dp"
+                        android:layout_marginTop="226dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="12dp"
                         android:maxLines="4"
-                        android:textSize="18sp"
+                        android:textSize="14dp"
                         android:layout_alignParentLeft="false"
                         android:layout_alignParentRight="false"
                         android:layout_alignParentTop="false"
                         android:textIsSelectable="false"
                         android:textStyle="bold"
-                        android:onClick="wallpaper"
-                        android:gravity="left"
-                        android:textColorHighlight="@color/pink_A400"
                         android:typeface="normal"
-                        android:textColorHint="@color/pink_400" />
+                        android:layout_alignRight="@+id/imageView"
+                        android:onClick="wallpaper" />
+
+                    <TextView
+                        android:id="@+id/sp1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wallpapers"
+                        android:textColor="#212121"
+                        android:singleLine="false"
+                        android:layout_marginTop="168dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="12dp"
+                        android:maxLines="4"
+                        android:textSize="20dp"
+                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentRight="false"
+                        android:layout_alignParentTop="false"
+                        android:textIsSelectable="false"
+                        android:layout_alignLeft="@+id/imageView" />
+
+                    <TextView
+                        android:id="@+id/sp1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apply your desire Wallpaper"
+                        android:textColor="#212121"
+                        android:singleLine="false"
+                        android:layout_marginTop="200dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="12dp"
+                        android:maxLines="4"
+                        android:textSize="12dp"
+                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentRight="false"
+                        android:layout_alignParentTop="false"
+                        android:textIsSelectable="false"
+                        android:typeface="normal" />
 
                 </RelativeLayout>
 
             </android.support.v7.widget.CardView>
-
 
 
 
