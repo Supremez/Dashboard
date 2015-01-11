@@ -271,7 +271,7 @@
                         android:layout_height="160dp"
                         android:id="@+id/imageView"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/anchorthumbf" />
+                        android:src="@drawable/wcard" />
 
                     <TextView
                         android:id="@+id/sp1"
