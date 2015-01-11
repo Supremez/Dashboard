@@ -14,6 +14,7 @@
     <string name="title_activity_about">About</string>
     <string name="hello_world">Hello world!</string>
     <string name="changelog_title">Changelog</string>
+    <string name="playstore_link">https://play.google.com/store/apps/details?id=com.diamondinc.zwskin.supremez</string>
 
     <!-- Changelog -->
     <string name="changelog">

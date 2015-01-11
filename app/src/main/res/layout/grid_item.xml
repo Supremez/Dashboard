@@ -41,8 +41,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:padding="@dimen/spacing_large"
-            android:layout_gravity="bottom"
-            android:background="@color/blue_grey_700"/>
+            android:background="@color/blue_grey_700" />
 
     </LinearLayout>
 </FrameLayout>

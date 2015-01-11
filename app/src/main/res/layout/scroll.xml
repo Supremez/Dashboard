@@ -205,7 +205,9 @@
                         android:textIsSelectable="false"
                         android:textStyle="bold"
                         android:typeface="normal"
-                        android:layout_alignRight="@+id/imageView" />
+                        android:layout_alignRight="@+id/imageView"
+                        android:autoLink="web"
+                        android:onClick="onClick" />
 
                     <TextView
                         android:id="@+id/sp1"
