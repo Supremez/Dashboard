@@ -4,11 +4,16 @@
     tools:context=".MainActivity">
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"
-        android:orderInCategory="100"
+        android:orderInCategory="3"
         app:showAsAction="never" />
     <item android:id="@+id/action_about"
         android:title="About"
-        android:orderInCategory="1000"
+        android:orderInCategory="1"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/changelog"
+        app:showAsAction="never"
+        android:orderInCategory="2"
+        android:title="Changelog"/>
 
 </menu>

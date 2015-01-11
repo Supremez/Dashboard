@@ -106,12 +106,18 @@ public class HomeActivity extends BaseActivity {
             view.setTag(imageUrl);
 
             ImageView image = (ImageView) view.findViewById(R.id.image);
+
+
             Picasso.with(view.getContext())
                     .load(imageUrl)
                     .into(image);
 
             TextView text = (TextView) view.findViewById(R.id.text);
             text.setText(getItem(i).toString());
+
+
+
+
 
 
             //TODO Modify Palette, doesn't work yet. Example code:
