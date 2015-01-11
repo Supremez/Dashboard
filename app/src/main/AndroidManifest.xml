@@ -71,10 +71,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="supremez2.zwskin.diamondinc.com.supremezdashboard.MainActivity" />
         </activity>
-        <activity
-            android:name="supremez2.zwskin.diamondinc.com.supremezdashboard.MainActivityLight"
-            android:label="@string/app_name" >
-        </activity>
+
     </application>
 
 </manifest>

@@ -11,18 +11,4 @@
         android:orderInCategory="1000"
         app:showAsAction="never" />
 
-    <group android:id="@+id/group1"
-        android:checkableBehavior="single">
-    <item
-        android:id="@+id/LightTheme"
-        android:orderInCategory="1"
-        android:title="@string/light"
-        app:showAsAction="never"/>
-    <item
-        android:id="@+id/DarkTheme"
-        android:orderInCategory="1"
-        android:title="@string/dark"
-        app:showAsAction="never"
-        android:checked="true"/>
-    </group>
 </menu>

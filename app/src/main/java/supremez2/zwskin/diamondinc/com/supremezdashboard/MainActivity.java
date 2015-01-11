@@ -27,7 +27,6 @@ public class MainActivity extends BaseActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        item.setChecked(false);
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
@@ -39,24 +38,6 @@ public class MainActivity extends BaseActivity {
             startActivity(intent);
             return true;
         }
-
-        switch (item.getItemId()) {
-            case R.id.LightTheme:
-                if (id == R.id.LightTheme) item.setChecked(true); {
-                    Intent intent = new Intent(this, supremez2.zwskin.diamondinc.com.supremezdashboard.MainActivityLight.class);
-                    startActivity(intent);
-                    break;
-                }
-
-            case R.id.DarkTheme:
-                if (id == R.id.DarkTheme) item.setChecked(true); {
-                    Intent intent = new Intent(this, supremez2.zwskin.diamondinc.com.supremezdashboard.MainActivity.class);
-                    startActivity(intent);
-                    break;
-                }
-        }
-
-
 
         return super.onOptionsItemSelected(item);
 
