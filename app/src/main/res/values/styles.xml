@@ -10,6 +10,8 @@
         <item name="colorPrimary">@color/blue_grey_500</item>
         <item name="colorPrimaryDark">@color/blue_grey_600</item>
         <item name="windowActionBar">false</item>
+        <item name="android:textColorSecondary">#fff</item>
+
     </style>
 
 

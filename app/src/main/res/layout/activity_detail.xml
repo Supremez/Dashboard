@@ -34,7 +34,8 @@
         android:measureAllChildren="true"
         android:keepScreenOn="false"
         android:fitsSystemWindows="false"
-        android:layoutDirection="inherit">
+        android:layoutDirection="inherit"
+        android:scrollbars="none">
 
 
 

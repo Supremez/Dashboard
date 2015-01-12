@@ -11,7 +11,8 @@
     android:measureAllChildren="false"
     android:duplicateParentState="false"
     android:drawingCacheQuality="high"
-    android:fitsSystemWindows="false">
+    android:fitsSystemWindows="false"
+    android:scrollbars="none">
 
 
 
