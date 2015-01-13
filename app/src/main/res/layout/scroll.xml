@@ -382,7 +382,7 @@
                         android:layout_height="160dp"
                         android:id="@+id/imageView"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/gpluscard" />
+                        android:src="@drawable/gpluscard1" />
 
                     <TextView
                         android:id="@+id/sp1"

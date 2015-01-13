@@ -10,8 +10,6 @@
         <item name="colorPrimary">@color/blue_grey_500</item>
         <item name="colorPrimaryDark">@color/blue_grey_700</item>
         <item name="android:textColorSecondary">#fff</item>
-        <item name="android:alertDialogTheme">@style/Base.V21.Theme.AppCompat.Light.Dialog</item>
-
         <item name="windowActionBar">false</item>
         <item name="android:windowContentTransitions">true</item>
         <item name="android:windowAllowEnterTransitionOverlap">true</item>

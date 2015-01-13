@@ -1,6 +1,5 @@
 package supremez2.zwskin.diamondinc.com.supremezdashboard;
 
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -17,6 +16,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialogCompat;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.melnykov.fab.FloatingActionButton;
@@ -99,9 +99,9 @@ public abstract class BaseActivity extends ActionBarActivity {
     public void getzooper(View view)
 
     {
-        final AlertDialog.Builder menuAleart = new AlertDialog.Builder(this);
+        final MaterialDialogCompat.Builder dialogBuilder = new MaterialDialogCompat.Builder(this);
         final String[] menuList = { "AMAZON APP STORE", "GOOGLE PLAY STORE" };
-        menuAleart.setItems(menuList,new DialogInterface.OnClickListener() {
+        dialogBuilder.setItems(menuList, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
                 switch (item) {
                     case 0:
@@ -118,8 +118,7 @@ public abstract class BaseActivity extends ActionBarActivity {
                 }
             }
         });
-        AlertDialog menuDrop = menuAleart.create();
-        menuDrop.show();
+        dialogBuilder.create().show();
     }
 
     public void iconsets(View view) {
