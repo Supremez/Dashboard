@@ -29,7 +29,7 @@
 
             <ImageView
                 android:layout_width="fill_parent"
-                android:layout_height="@dimen/item_height"
+                android:layout_height="200dp"
                 android:id="@+id/imageView2"
                 android:layout_gravity="center|top"
                 android:adjustViewBounds="true"
@@ -90,13 +90,13 @@
                     card_view:cardCornerRadius="2dp"
                     card_view:cardElevation="5dp"
                     card_view:cardUseCompatPadding="true"
-                    android:background="#fff">
+                    android:background="#fff"
+                    style="@style/CardView.Dark">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:id="@+id/rl1"
-                        android:background="#212121">
+                        android:id="@+id/rl1">
 
                         <TextView
                             android:id="@+id/info_text"
@@ -174,12 +174,12 @@
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/rlmaster">
+                android:layout_below="@+id/rlmaster"
+                style="@style/CardView.Dark">
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:background="#212121">
+                    android:layout_height="fill_parent">
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -262,12 +262,12 @@
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
                 android:layout_marginTop="290dp"
-                android:layout_below="@+id/rlmaster">
+                android:layout_below="@+id/rlmaster"
+                style="@style/CardView.Dark">
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:background="#212121">
+                    android:layout_height="fill_parent">
 
                     <ImageView
                         android:layout_width="match_parent"

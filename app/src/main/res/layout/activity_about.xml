@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/container"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -13,63 +13,9 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar"/>
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView"
-        android:paddingTop="@dimen/abc_action_bar_default_height_material">
+    <include
+        android:id="@+id/scroll_about"
+        layout="@layout/scroll_about"/>
 
 
-    </ScrollView>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="16dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/toolbar"
-        android:layout_alignParentBottom="true">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Developers of this template:"
-            android:id="@+id/textView"
-            android:textColor="@color/grey_700"
-            android:gravity="center|top"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Tim Bremer"
-        android:id="@+id/tim"
-        android:layout_gravity="left|center_vertical"
-        android:textColor="@color/grey_700"
-            android:layout_marginTop="30dp"
-            android:layout_below="@+id/textView"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="30dp"
-            android:layout_marginStart="30dp" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView5"
-            android:layout_below="@+id/tim"
-            android:layout_alignLeft="@+id/tim"
-            android:layout_alignStart="@+id/tim"
-            android:src="@drawable/twitter" />
-
-
-    </RelativeLayout>
 </RelativeLayout>
