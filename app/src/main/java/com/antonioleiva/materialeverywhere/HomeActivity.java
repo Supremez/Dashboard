@@ -17,12 +17,10 @@
 package com.antonioleiva.materialeverywhere;
 
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.graphics.Palette;
-import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -125,21 +123,22 @@ public class HomeActivity extends BaseActivity {
 
                         @Override
                         public void onSuccess() {
-                            GridView gridView = (GridView) findViewById(R.id.gridView);
+                            ImageView imageView = (ImageView) findViewById(R.id.imageView7);
+
                             Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();
                             Palette palette = PaletteTransformation.getPalette(bitmap);
 
                             PaletteLoader.with(image.getContext(), imageUrl)
                                     .load(palette)
                                     .setPaletteRequest(new PaletteRequest(
-                                            PaletteRequest.SwatchType.REGULAR_VIBRANT,
+                                            PaletteRequest.SwatchType.LIGHT_VIBRANT,
                                             PaletteRequest.SwatchColor.BACKGROUND))
-                                    .into(gridView.findViewById(R.id.gridView)); //This was in your Palette example, but won't it change the background of the GridView? You can choose any view you want here to apply the color to.
+                                    .into(imageView.findViewById(R.id.imageView7)); //This was in your Palette example, but won't it change the background of the GridView? You can choose any view you want here to apply the color to.
 
                         }
                     });
 
-            TextView text = (TextView) view.findViewById(R.id.text);
+            TextView text = (TextView) view.findViewById(R.id.textpalette);
             text.setText(getItem(i).toString());
 
 
