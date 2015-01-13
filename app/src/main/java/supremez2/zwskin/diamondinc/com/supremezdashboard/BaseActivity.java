@@ -43,6 +43,10 @@ public abstract class BaseActivity extends ActionBarActivity {
         if (toolbar != null) {
             setSupportActionBar(toolbar);
 
+            YoYo.with(Techniques.RotateIn)
+                    .duration(600)
+                    .playOn(findViewById(R.id.imageView4));
+
             YoYo.with(Techniques.FadeIn)
                     .duration(1800)
                     .playOn(findViewById(R.id.imageView3));
