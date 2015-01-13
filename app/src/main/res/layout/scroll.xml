@@ -23,7 +23,7 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="848dp"
+            android:layout_height="1127dp"
             android:orientation="vertical">
 
 
@@ -274,13 +274,34 @@
                         android:layout_height="160dp"
                         android:id="@+id/imageView"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/wcard" />
+                        android:src="@drawable/iconsets_card" />
 
                     <TextView
                         android:id="@+id/sp1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="APPLY"
+                        android:text="ZOOPER"
+                        android:textColor="@color/teal_A400"
+                        android:singleLine="false"
+                        android:layout_marginTop="226dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="12dp"
+                        android:maxLines="4"
+                        android:textSize="14dp"
+                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentRight="false"
+                        android:layout_alignParentTop="false"
+                        android:textIsSelectable="false"
+                        android:textStyle="bold"
+                        android:typeface="normal"
+                        android:onClick="getzooper"
+                        android:layout_alignLeft="@+id/imageView" />
+
+                    <TextView
+                        android:id="@+id/sp1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SET ICONSETS"
                         android:textColor="@color/teal_A400"
                         android:singleLine="false"
                         android:layout_marginTop="226dp"
@@ -295,13 +316,13 @@
                         android:textStyle="bold"
                         android:typeface="normal"
                         android:layout_alignRight="@+id/imageView"
-                        android:onClick="wallpaper" />
+                        android:onClick="iconsets" />
 
                     <TextView
                         android:id="@+id/sp1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Wallpapers"
+                        android:text="Zooper Skins"
                         android:textColor="#fff"
                         android:singleLine="false"
                         android:layout_marginTop="168dp"
@@ -319,7 +340,7 @@
                         android:id="@+id/sp1"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="Apply your desire Wallpaper"
+                        android:text="Install IconSets or get Zooper Widget Pro"
                         android:textColor="#fff"
                         android:singleLine="false"
                         android:layout_marginTop="200dp"
@@ -332,6 +353,93 @@
                         android:layout_alignParentTop="false"
                         android:textIsSelectable="false"
                         android:typeface="normal" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                card_view:cardCornerRadius="2dp"
+                card_view:cardElevation="5dp"
+                card_view:cardUseCompatPadding="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="570dp"
+                android:layout_below="@+id/rlmaster"
+                style="@style/CardView.Dark">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:id="@+id/imageView"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/gpluscard" />
+
+                    <TextView
+                        android:id="@+id/sp1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/teal_A400"
+                        android:singleLine="false"
+                        android:layout_marginTop="226dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="12dp"
+                        android:maxLines="4"
+                        android:textSize="14dp"
+                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentRight="false"
+                        android:layout_alignParentTop="false"
+                        android:textIsSelectable="false"
+                        android:textStyle="bold"
+                        android:typeface="normal"
+                        android:layout_alignRight="@+id/imageView"
+                        android:onClick="gplus"
+                        android:text="ADD" />
+
+                    <TextView
+                        android:id="@+id/sp1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Follow Me"
+                        android:textColor="#fff"
+                        android:singleLine="false"
+                        android:layout_marginTop="168dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="12dp"
+                        android:maxLines="4"
+                        android:textSize="20dp"
+                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentRight="false"
+                        android:layout_alignParentTop="false"
+                        android:textIsSelectable="false"
+                        android:layout_alignLeft="@+id/imageView" />
+
+                    <TextView
+                        android:id="@+id/sp1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fff"
+                        android:singleLine="false"
+                        android:layout_marginTop="200dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="12dp"
+                        android:maxLines="4"
+                        android:textSize="12dp"
+                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentRight="false"
+                        android:layout_alignParentTop="false"
+                        android:textIsSelectable="false"
+                        android:typeface="normal"
+                        android:text="Follow me on Google+ for news" />
 
                 </RelativeLayout>
 

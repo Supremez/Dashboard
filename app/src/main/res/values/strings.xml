@@ -15,6 +15,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="changelog_title">Changelog</string>
     <string name="playstore_link">https://play.google.com/store/apps/details?id=com.diamondinc.zwskin.supremez</string>
+    <string name="googleplus_link">https://plus.google.com/+ArturoMB</string>
 
     <!-- Changelog -->
     <string name="changelog">
@@ -24,5 +25,7 @@
         &#8226; Welcome to SupremezV2\n
         &#8226; New Dashboard, Widgets and Walls\n
    </string>
+
+    <string name="apkfilename">Supremezv2.apk</string>
 
 </resources>

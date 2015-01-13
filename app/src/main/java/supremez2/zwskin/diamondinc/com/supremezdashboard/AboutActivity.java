@@ -8,8 +8,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 
 
 public class AboutActivity extends ActionBarActivity {
@@ -24,6 +28,17 @@ public class AboutActivity extends ActionBarActivity {
         if (toolbar != null) {
             setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+            YoYo.with(Techniques.Shake)
+                    .delay(400)
+                    .interpolate(new AccelerateDecelerateInterpolator())
+                    .duration(1700)
+                    .playOn(findViewById(R.id.card_view1));
+            YoYo.with(Techniques.Shake)
+                    .delay(400)
+                    .interpolate(new AccelerateDecelerateInterpolator())
+                    .duration(1700)
+                    .playOn(findViewById(R.id.card_view2));
         }
     }
 
