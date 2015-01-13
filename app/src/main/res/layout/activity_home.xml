@@ -45,7 +45,8 @@
             android:stretchMode="columnWidth"
             android:textFilterEnabled="false"
             android:clickable="false"
-            android:scrollbars="none" />
+            android:scrollbars="none"
+            />
 
     </RelativeLayout>
 

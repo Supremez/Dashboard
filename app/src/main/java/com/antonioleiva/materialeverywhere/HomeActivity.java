@@ -16,8 +16,13 @@
 
 package com.antonioleiva.materialeverywhere;
 
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.graphics.Palette;
+import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -30,8 +35,12 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+import supremez2.zwskin.diamondinc.com.supremezdashboard.PaletteLoader;
+import supremez2.zwskin.diamondinc.com.supremezdashboard.PaletteRequest;
+import supremez2.zwskin.diamondinc.com.supremezdashboard.PaletteTransformation;
 import supremez2.zwskin.diamondinc.com.supremezdashboard.R;
 
 
@@ -44,9 +53,9 @@ public class HomeActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setActionBarIcon(R.drawable.ic_ab_drawer);
-
         GridView gridView = (GridView) findViewById(R.id.gridView);
         gridView.setAdapter(new GridViewAdapter());
+
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -81,7 +90,7 @@ public class HomeActivity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private static class GridViewAdapter extends BaseAdapter {
+    private class GridViewAdapter extends BaseAdapter {
 
 
         @Override public int getCount() {
@@ -103,39 +112,36 @@ public class HomeActivity extends BaseActivity {
                         .inflate(R.layout.grid_item, viewGroup, false);
             }
 
-            String imageUrl = "http://tbremer.pf-control.de/walls/" + String.valueOf(i + 1) + ".png";
+            final String imageUrl = "http://tbremer.pf-control.de/walls/" + String.valueOf(i + 1) + ".png";
             view.setTag(imageUrl);
-
-            ImageView image = (ImageView) view.findViewById(R.id.image);
+            final ImageView image = (ImageView) view.findViewById(R.id.image);
 
 
             Picasso.with(view.getContext())
                     .load(imageUrl)
-                    .into(image);
+                    .fit().centerCrop()
+                    .transform(PaletteTransformation.instance())
+                    .into(image, new Callback.EmptyCallback() {
+
+                        @Override
+                        public void onSuccess() {
+                            GridView gridView = (GridView) findViewById(R.id.gridView);
+                            Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();
+                            Palette palette = PaletteTransformation.getPalette(bitmap);
+
+                            PaletteLoader.with(image.getContext(), imageUrl)
+                                    .load(palette)
+                                    .setPaletteRequest(new PaletteRequest(
+                                            PaletteRequest.SwatchType.REGULAR_VIBRANT,
+                                            PaletteRequest.SwatchColor.BACKGROUND))
+                                    .into(gridView.findViewById(R.id.gridView)); //This was in your Palette example, but won't it change the background of the GridView? You can choose any view you want here to apply the color to.
+
+                        }
+                    });
 
             TextView text = (TextView) view.findViewById(R.id.text);
             text.setText(getItem(i).toString());
 
-
-
-
-
-
-            //TODO Modify Palette, doesn't work yet. Example code:
-           /* Palette.generateAsync(bitmap,
-                    new Palette.PaletteAsyncListener() {
-                        @Override
-
-                        public void onGenerated(Palette palette) {
-                            Palette.Swatch vibrant =
-                                    palette.getMutedSwatch();
-                            if (vibrant != null) {
-
-                                gridView.findViewById(R.id.gridView).setBackgroundColor(
-                                        vibrant.getRgb());
-                            }
-                        }
-                    }); */
 
 
             return view;
