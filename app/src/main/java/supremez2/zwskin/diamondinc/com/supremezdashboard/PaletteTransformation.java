@@ -10,7 +10,7 @@ import java.util.WeakHashMap;
 
 public final class PaletteTransformation implements Transformation {
     private static final PaletteTransformation INSTANCE = new PaletteTransformation();
-    private static final Map<Bitmap, Palette> CACHE = new WeakHashMap<Bitmap, Palette>();
+    private static final Map<Bitmap, Palette> CACHE = new WeakHashMap<>();
 
     public static PaletteTransformation instance() {
         return INSTANCE;
