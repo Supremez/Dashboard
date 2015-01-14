@@ -131,8 +131,8 @@ public class HomeActivity extends BaseActivity {
                             PaletteLoader.with(image.getContext(), imageUrl)
                                     .load(palette)
                                     .setPaletteRequest(new PaletteRequest(
-                                            PaletteRequest.SwatchType.REGULAR_VIBRANT,
-                                            PaletteRequest.SwatchColor.TEXT_TITLE))
+                                            PaletteRequest.SwatchType.LIGHT_MUTED,
+                                            PaletteRequest.SwatchColor.BACKGROUND))
                                     .into(imageView.findViewById(R.id.imageView7)); //This was in your Palette example, but won't it change the background of the GridView? You can choose any view you want here to apply the color to.
 
                         }
