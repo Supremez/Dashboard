@@ -16,6 +16,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 import java.io.IOException;
 
 import supremez2.zwskin.diamondinc.com.supremezdashboard.R;
@@ -31,7 +33,7 @@ public class DetailActivity extends BaseActivity {
 
         ImageView image = (ImageView) findViewById(R.id.image);
         ViewCompat.setTransitionName(image, EXTRA_IMAGE);
-        PicassoBigCache.INSTANCE.getPicassoBigCache(this).load(getIntent().getStringExtra(EXTRA_IMAGE)).into(image);
+        Picasso.with(this).load(getIntent().getStringExtra(EXTRA_IMAGE)).into(image);
     }
 
     @Override protected int getLayoutResource() {

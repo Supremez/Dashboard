@@ -34,6 +34,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
 
 import supremez2.zwskin.diamondinc.com.supremezdashboard.PaletteLoader;
 import supremez2.zwskin.diamondinc.com.supremezdashboard.PaletteRequest;
@@ -114,7 +115,7 @@ public class HomeActivity extends BaseActivity {
             final ImageView image = (ImageView) view.findViewById(R.id.image);
 
 
-            PicassoBigCache.INSTANCE.getPicassoBigCache(view.getContext())
+            Picasso.with(view.getContext())
                     .load(imageUrl)
                     .fit().centerCrop()
                     .transform(PaletteTransformation.instance())
