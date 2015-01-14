@@ -34,7 +34,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
 
 import supremez2.zwskin.diamondinc.com.supremezdashboard.PaletteLoader;
 import supremez2.zwskin.diamondinc.com.supremezdashboard.PaletteRequest;
@@ -115,7 +114,7 @@ public class HomeActivity extends BaseActivity {
             final ImageView image = (ImageView) view.findViewById(R.id.image);
 
 
-            Picasso.with(view.getContext())
+            PicassoBigCache.INSTANCE.getPicassoBigCache(view.getContext())
                     .load(imageUrl)
                     .fit().centerCrop()
                     .transform(PaletteTransformation.instance())
@@ -131,7 +130,7 @@ public class HomeActivity extends BaseActivity {
                             PaletteLoader.with(image.getContext(), imageUrl)
                                     .load(palette)
                                     .setPaletteRequest(new PaletteRequest(
-                                            PaletteRequest.SwatchType.LIGHT_MUTED,
+                                            PaletteRequest.SwatchType.LIGHT_VIBRANT,
                                             PaletteRequest.SwatchColor.BACKGROUND))
                                     .into(imageView.findViewById(R.id.imageView7)); //This was in your Palette example, but won't it change the background of the GridView? You can choose any view you want here to apply the color to.
 

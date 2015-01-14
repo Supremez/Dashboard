@@ -5,7 +5,6 @@ package com.antonioleiva.materialeverywhere;
 import android.app.WallpaperManager;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -16,8 +15,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
-
-import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 
@@ -34,7 +31,7 @@ public class DetailActivity extends BaseActivity {
 
         ImageView image = (ImageView) findViewById(R.id.image);
         ViewCompat.setTransitionName(image, EXTRA_IMAGE);
-        Picasso.with(this).load(getIntent().getStringExtra(EXTRA_IMAGE)).into(image);
+        PicassoBigCache.INSTANCE.getPicassoBigCache(this).load(getIntent().getStringExtra(EXTRA_IMAGE)).into(image);
     }
 
     @Override protected int getLayoutResource() {

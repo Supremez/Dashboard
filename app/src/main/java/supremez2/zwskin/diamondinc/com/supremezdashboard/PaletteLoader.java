@@ -132,7 +132,7 @@ public class PaletteLoader {
         private Bitmap bitmap;
         private boolean maskDrawable;
         private int fallbackColor = Color.TRANSPARENT;
-        private PaletteRequest paletteRequest = new PaletteRequest(PaletteRequest.SwatchType.REGULAR_VIBRANT, PaletteRequest.SwatchColor.BACKGROUND);
+        private PaletteRequest paletteRequest = new PaletteRequest(PaletteRequest.SwatchType.LIGHT_VIBRANT, PaletteRequest.SwatchColor.BACKGROUND);
         private Palette palette;
 
         public PaletteBuilder(String id) {
