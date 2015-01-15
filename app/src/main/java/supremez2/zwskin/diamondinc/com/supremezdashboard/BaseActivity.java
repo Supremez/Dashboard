@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -19,7 +20,9 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialogCompat;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.manuelpeinado.fadingactionbar.extras.actionbarcompat.FadingActionBarHelper;
 import com.melnykov.fab.FloatingActionButton;
+import com.melnykov.fab.ObservableScrollView;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -36,8 +39,6 @@ public abstract class BaseActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
         setContentView(getLayoutResource());
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar != null) {
@@ -60,7 +61,6 @@ public abstract class BaseActivity extends ActionBarActivity {
 
         }
 
-
         ScrollView scrollView = (ScrollView) findViewById(R.id.scroll);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
@@ -79,7 +79,6 @@ public abstract class BaseActivity extends ActionBarActivity {
        });
 
     }
-
 
     public void wallpaper(View view) {
       Intent intent = new Intent(this, com.antonioleiva.materialeverywhere.HomeActivity.class);

@@ -16,7 +16,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected int getLayoutResource() {
         //return R.layout.activity_main_light;
-        return R.layout.activity_main;
+        return R.layout.activity_main_light;
     }
 
     @Override
