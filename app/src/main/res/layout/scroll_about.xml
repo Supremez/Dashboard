@@ -101,39 +101,39 @@
                         android:layout_marginStart="20dp" />
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         android:id="@+id/gplus_tim"
                         android:src="@drawable/gplus"
                         android:onClick="gplus_tim"
-                        android:layout_alignBottom="@+id/imageView6"
-                        android:layout_toRightOf="@+id/imageView6"
-                        android:layout_toEndOf="@+id/imageView6" />
+                        android:layout_alignTop="@+id/twitter_tim"
+                        android:layout_alignLeft="@+id/textView"
+                        android:layout_alignStart="@+id/textView" />
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         android:id="@+id/twitter_tim"
                         android:src="@drawable/twitter"
-                        android:layout_alignTop="@+id/gplus_tim"
+                        android:layout_alignTop="@+id/mail_tim"
                         android:layout_toRightOf="@+id/gplus_tim"
                         android:layout_toEndOf="@+id/gplus_tim" />
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         android:id="@+id/mail_tim"
-                        android:layout_alignTop="@+id/twitter_tim"
+                        android:src="@drawable/gmail"
+                        android:layout_alignTop="@+id/github_tim"
                         android:layout_toRightOf="@+id/twitter_tim"
-                        android:layout_toEndOf="@+id/twitter_tim"
-                        android:src="@drawable/gmail" />
+                        android:layout_toEndOf="@+id/twitter_tim" />
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         android:id="@+id/github_tim"
                         android:src="@drawable/github"
-                        android:layout_alignTop="@+id/mail_tim"
+                        android:layout_centerVertical="true"
                         android:layout_toRightOf="@+id/mail_tim"
                         android:layout_toEndOf="@+id/mail_tim" />
 

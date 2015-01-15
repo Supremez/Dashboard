@@ -32,12 +32,12 @@ public class AboutActivity extends ActionBarActivity {
             setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-            YoYo.with(Techniques.Pulse)
+            YoYo.with(Techniques.FadeIn)
                     .delay(400)
                     .interpolate(new AccelerateDecelerateInterpolator())
                     .duration(1700)
                     .playOn(findViewById(R.id.card_view1));
-            YoYo.with(Techniques.Pulse)
+            YoYo.with(Techniques.FadeIn)
                     .delay(400)
                     .interpolate(new AccelerateDecelerateInterpolator())
                     .duration(1700)
@@ -68,7 +68,10 @@ public class AboutActivity extends ActionBarActivity {
         mailtim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO Add email intent
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                        "mailto","tbremer19@gmail.com", null));
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "SUBJECT");
+                startActivity(Intent.createChooser(emailIntent, "Choose email app"));
             }
         });
 
