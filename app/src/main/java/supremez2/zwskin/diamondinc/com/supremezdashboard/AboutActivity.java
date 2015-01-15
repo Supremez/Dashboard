@@ -1,6 +1,8 @@
 package supremez2.zwskin.diamondinc.com.supremezdashboard;
 
 import android.app.Dialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -10,6 +12,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.daimajia.androidanimations.library.Techniques;
@@ -29,17 +32,56 @@ public class AboutActivity extends ActionBarActivity {
             setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-            YoYo.with(Techniques.Shake)
+            YoYo.with(Techniques.Pulse)
                     .delay(400)
                     .interpolate(new AccelerateDecelerateInterpolator())
                     .duration(1700)
                     .playOn(findViewById(R.id.card_view1));
-            YoYo.with(Techniques.Shake)
+            YoYo.with(Techniques.Pulse)
                     .delay(400)
                     .interpolate(new AccelerateDecelerateInterpolator())
                     .duration(1700)
                     .playOn(findViewById(R.id.card_view2));
         }
+
+        ImageView plustim = (ImageView) findViewById(R.id.gplus_tim);
+        plustim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent viewIntent = new Intent("android.intent.action.VIEW", Uri.parse("http://google.com/+TimBremer"));
+                startActivity(viewIntent);
+            }
+        });
+
+
+        ImageView gittim = (ImageView) findViewById(R.id.github_tim);
+        gittim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent viewIntent = new Intent("android.intent.action.VIEW", Uri.parse("http://github.com/tbremer19"));
+                startActivity(viewIntent);
+            }
+        });
+
+
+        ImageView mailtim = (ImageView) findViewById(R.id.mail_tim);
+        mailtim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO Add email intent
+            }
+        });
+
+
+        ImageView twittertim = (ImageView) findViewById(R.id.twitter_tim);
+        twittertim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent viewIntent = new Intent("android.intent.action.VIEW", Uri.parse("http://twitter.com/tbremer19"));
+                startActivity(viewIntent);
+            }
+        });
+
     }
 
 
