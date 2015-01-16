@@ -3,6 +3,8 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="@style/Theme.AppCompat">
         <item name="android:windowNoTitle">true</item>
+        <item name="fontPath">fonts/RobotoCondensed-Light.ttf</item>
+        <item name="android:textViewStyle">@style/AppTheme.Widget.TextView</item>
 
         <!-- Customize your theme here. -->
         <!-- Set AppCompat’s color theming attrs -->
@@ -23,6 +25,12 @@
         <item name="android:textColor">#000</item>
     </style>
 
-
+    <style name="AppTheme.Widget.TextView" parent="android:Widget.Holo.Light.TextView">
+        <item name="fontPath">fonts/RobotoCondensed-Light.ttf</item>
+    </style>
+    
+<style name="Font">
+    <item name="fontPath">fonts/RobotoCondensed-Regular.ttf</item>
+</style>
 
 </resources>

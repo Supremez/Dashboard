@@ -1,5 +1,6 @@
 package supremez2.zwskin.diamondinc.com.supremezdashboard;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -31,6 +32,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+import uk.co.chrisjenx.calligraphy.CalligraphyUtils;
+
 
 public abstract class BaseActivity extends ActionBarActivity {
 
@@ -40,6 +45,7 @@ public abstract class BaseActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutResource());
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar != null) {
             setSupportActionBar(toolbar);
@@ -58,8 +64,9 @@ public abstract class BaseActivity extends ActionBarActivity {
                     .duration(2100)
                     .playOn(findViewById(R.id.imageView3));
 
-
         }
+
+
 
         ScrollView scrollView = (ScrollView) findViewById(R.id.scroll);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -78,6 +85,13 @@ public abstract class BaseActivity extends ActionBarActivity {
            }
        });
 
+
+
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
     public void wallpaper(View view) {
