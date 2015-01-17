@@ -21,6 +21,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.graphics.Palette;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -35,6 +36,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import supremez2.zwskin.diamondinc.com.supremezdashboard.PaletteTransformation;
 import supremez2.zwskin.diamondinc.com.supremezdashboard.R;
@@ -118,21 +120,25 @@ public class HomeActivity extends BaseActivity {
 
 
 
+
+
             Picasso.with(view.getContext())
                     .load(imageUrl)
                     .fit().centerCrop()
                     .transform(PaletteTransformation.instance())
                     .into(image, new Callback.EmptyCallback() {
                         @Override public void onSuccess() {
-                            Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap(); // Ew!
-                            Palette palette = PaletteTransformation.getPalette(bitmap);
-                            // TODO apply palette to text views, backgrounds, etc.
-                            Palette.Swatch vibrant =
-                                    palette.getVibrantSwatch();
-                            view1.setBackgroundColor(
-                                    vibrant.getRgb());
+                            final Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();// Ew!
+                            Palette.generateAsync(bitmap, new Palette.PaletteAsyncListener() {
+                                public void onGenerated(Palette palette) {
+
+                                    int bgColor = palette.getVibrantColor(android.R.color.white);
+                                    view1.setBackgroundColor(bgColor);
+                                }
+                            });
                         }
                     });
+
 
 
             TextView text = (TextView) view.findViewById(R.id.textpalette);
