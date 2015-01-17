@@ -49,4 +49,5 @@ dependencies {
     compile files('lib/android-async-http-1.4.4.jar')
     compile files('lib/universal-image-loader-1.7.0.jar')
     compile files('lib/universal-image-loader-1.7.0-sources.jar')
+    compile 'com.soundcloud.android:android-crop:0.9.10@aar'
 }
