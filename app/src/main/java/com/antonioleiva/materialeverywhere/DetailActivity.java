@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.antonioleiva.materialeverywhere.uk.co.senab.photoview.PhotoViewAttacher;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
@@ -25,21 +26,21 @@ import supremez2.zwskin.diamondinc.com.supremezdashboard.R;
 
 public class DetailActivity extends BaseActivity {
 
+    ImageView mImageView;
+    PhotoViewAttacher mAttacher;
+
     public static final String EXTRA_IMAGE = "DetailActivity:image";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ImageView image = (ImageView) findViewById(R.id.image);
-        ViewCompat.setTransitionName(image, EXTRA_IMAGE);
-        Picasso.with(this).load(getIntent().getStringExtra(EXTRA_IMAGE)).into(image);
-    }
+        mImageView = (ImageView) findViewById(R.id.image);
+        mAttacher = new PhotoViewAttacher(mImageView);
 
-    protected void onDestroy() {
-        super.onDestroy();
-        ImageView image = (ImageView) findViewById(R.id.image);
-        Picasso.with(this).cancelRequest(image);
+        ViewCompat.setTransitionName(mImageView, EXTRA_IMAGE);
+        Picasso.with(this).load(getIntent().getStringExtra(EXTRA_IMAGE)).into(mImageView);
+
 
     }
 
@@ -65,9 +66,8 @@ public class DetailActivity extends BaseActivity {
             return true;
         }
         if (id == R.id.set_wall) {
-
-            ImageView image = (ImageView) findViewById(R.id.image);
-            Bitmap mBitmap = ((BitmapDrawable)image.getDrawable()).getBitmap();
+            mImageView = (ImageView) findViewById(R.id.image);
+            Bitmap mBitmap = ((BitmapDrawable)mImageView.getDrawable()).getBitmap();
             WallpaperManager myWallpaperManager = WallpaperManager
                     .getInstance(getApplicationContext());
 

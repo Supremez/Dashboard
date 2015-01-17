@@ -4,6 +4,7 @@
     <style name="AppTheme" parent="@style/Theme.AppCompat">
         <item name="android:windowNoTitle">true</item>
 
+
         <!-- Customize your theme here. -->
         <!-- Set AppCompat’s color theming attrs -->
 

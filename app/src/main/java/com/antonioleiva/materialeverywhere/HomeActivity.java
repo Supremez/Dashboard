@@ -114,9 +114,9 @@ public class HomeActivity extends BaseActivity {
 
             Picasso.with(view.getContext())
                     .load(imageUrl)
-                    //.fit()
-                    //.centerCrop()
-                    //.transform(PaletteTransformation.instance())
+                   // .fit()
+                   // .centerCrop()
+                   // .transform(PaletteTransformation.instance())
                     .into(image);//, new Callback.EmptyCallback() {
 
                        // @Override
@@ -133,8 +133,8 @@ public class HomeActivity extends BaseActivity {
                        //                    PaletteRequest.SwatchColor.BACKGROUND))
                        //             .into(imageView.findViewById(R.id.imageView7)); //This was in your Palette example, but won't it change the background of the GridView? You can choose any view you want here to apply the color to.
 
-                       // }
-                   // });
+                        //}
+                    //});
 
             TextView text = (TextView) view.findViewById(R.id.textpalette);
             text.setText(getItem(i).toString());
