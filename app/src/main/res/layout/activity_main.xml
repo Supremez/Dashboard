@@ -8,7 +8,7 @@
     android:layout_height="wrap_content"
     tools:context=".MyActivity"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
-    android:background="#181818">
+    android:background="#101010">
 
     <include
         android:id="@+id/toolbar"

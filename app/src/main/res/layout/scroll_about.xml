@@ -3,6 +3,7 @@
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="fill_parent"
     android:layout_marginTop="@dimen/abc_action_bar_default_height_material"
@@ -12,7 +13,8 @@
     android:duplicateParentState="false"
     android:drawingCacheQuality="high"
     android:fitsSystemWindows="false"
-    android:scrollbars="none">
+    android:scrollbars="none"
+    tools:showIn="@layout/activity_about">
 
 
 
@@ -27,8 +29,7 @@
             android:layout_alignParentLeft="false"
             android:layout_alignParentStart="false"
             android:layout_below="@+id/toolbar"
-            android:layout_alignParentBottom="false"
-            android:background="#181818">
+            android:layout_alignParentBottom="false">
 
 
             <ImageView
@@ -101,41 +102,47 @@
                         android:layout_marginStart="20dp" />
 
                     <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:id="@+id/gplus_tim"
                         android:src="@drawable/gplus"
                         android:onClick="gplus_tim"
-                        android:layout_alignTop="@+id/twitter_tim"
+                        android:padding="6dp"
+                        android:layout_alignBottom="@+id/imageView6"
                         android:layout_alignLeft="@+id/textView"
                         android:layout_alignStart="@+id/textView" />
 
                     <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:id="@+id/twitter_tim"
                         android:src="@drawable/twitter"
-                        android:layout_alignTop="@+id/mail_tim"
+                        android:padding="6dp"
+                        android:layout_alignTop="@+id/gplus_tim"
                         android:layout_toRightOf="@+id/gplus_tim"
                         android:layout_toEndOf="@+id/gplus_tim" />
 
                     <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:id="@+id/mail_tim"
                         android:src="@drawable/gmail"
-                        android:layout_alignTop="@+id/github_tim"
+                        android:padding="6dp"
+                        android:layout_alignTop="@+id/twitter_tim"
                         android:layout_toRightOf="@+id/twitter_tim"
                         android:layout_toEndOf="@+id/twitter_tim" />
 
                     <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:id="@+id/github_tim"
                         android:src="@drawable/github"
-                        android:layout_centerVertical="true"
+                        android:padding="6dp"
+                        android:layout_alignTop="@+id/mail_tim"
                         android:layout_toRightOf="@+id/mail_tim"
-                        android:layout_toEndOf="@+id/mail_tim" />
+                        android:layout_toEndOf="@+id/mail_tim"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentStart="false" />
 
                 </RelativeLayout>
 
@@ -187,6 +194,47 @@
                         android:layout_toEndOf="@+id/imageView6"
                         android:layout_marginLeft="20dp"
                         android:layout_marginStart="20dp" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:id="@+id/gplus_tim"
+                        android:src="@drawable/gplus"
+                        android:onClick="gplus_tim"
+                        android:padding="6dp"
+                        android:layout_alignTop="@+id/twitter_tim"
+                        android:layout_alignLeft="@+id/textView2"
+                        android:layout_alignStart="@+id/textView2" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:id="@+id/twitter_tim"
+                        android:src="@drawable/twitter"
+                        android:padding="6dp"
+                        android:layout_alignTop="@+id/mail_tim"
+                        android:layout_toRightOf="@+id/gplus_tim"
+                        android:layout_toEndOf="@+id/gplus_tim" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:id="@+id/mail_tim"
+                        android:src="@drawable/gmail"
+                        android:padding="6dp"
+                        android:layout_alignTop="@+id/github_tim"
+                        android:layout_toRightOf="@+id/twitter_tim"
+                        android:layout_toEndOf="@+id/twitter_tim" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:id="@+id/github_tim"
+                        android:src="@drawable/github"
+                        android:padding="6dp"
+                        android:layout_alignBottom="@+id/imageView6"
+                        android:layout_toRightOf="@+id/mail_tim"
+                        android:layout_toEndOf="@+id/mail_tim" />
 
                 </RelativeLayout>
 

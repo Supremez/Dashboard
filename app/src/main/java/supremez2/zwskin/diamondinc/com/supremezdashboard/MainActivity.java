@@ -1,7 +1,6 @@
 package supremez2.zwskin.diamondinc.com.supremezdashboard;
 
 import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,16 +9,16 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
-
 public class MainActivity extends BaseActivity {
 
     //TODO Theme tutorial
 
     @Override
     protected int getLayoutResource() {
+
         //return R.layout.activity_main_light;
         return R.layout.activity_main;
+
     }
 
 

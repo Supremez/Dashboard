@@ -3,7 +3,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@android:color/white"
     android:orientation="vertical"
     android:windowMinWidthMajor="@android:dimen/dialog_min_width_major">
 
@@ -11,14 +10,15 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="24dp"
+        android:background="#212121">
 
         <TextView
             android:id="@+id/text1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="16dp"
-            android:textColor="#212121"
+            android:textColor="#fff"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -26,7 +26,7 @@
             android:id="@+id/text2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#212121"
+            android:textColor="#fff"
             android:textSize="14sp" />
     </LinearLayout>
 
@@ -37,7 +37,8 @@
         android:orientation="horizontal"
         android:paddingBottom="16dp"
         android:paddingLeft="16dp"
-        android:paddingRight="16dp">
+        android:paddingRight="16dp"
+        android:background="#212121">
 
         <Button
             android:id="@android:id/button1"
@@ -60,7 +61,7 @@
             android:minHeight="36dp"
             android:minWidth="88dp"
             android:textAllCaps="true"
-            android:textColor="@color/pink_A400"
+            android:textColor="@color/teal_A400"
             android:textSize="16sp"
             android:textStyle="bold"
             android:text="Close"

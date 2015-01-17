@@ -1,11 +1,14 @@
 package supremez2.zwskin.diamondinc.com.supremezdashboard;
 
+
 import android.content.Context;
+
+import android.app.AlertDialog;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -18,12 +21,9 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.MaterialDialogCompat;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.manuelpeinado.fadingactionbar.extras.actionbarcompat.FadingActionBarHelper;
 import com.melnykov.fab.FloatingActionButton;
-import com.melnykov.fab.ObservableScrollView;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -112,9 +112,9 @@ public abstract class BaseActivity extends ActionBarActivity {
     public void getzooper(View view)
 
     {
-        final MaterialDialogCompat.Builder dialogBuilder = new MaterialDialogCompat.Builder(this);
+        final AlertDialog.Builder menuAleart = new AlertDialog.Builder(this);
         final String[] menuList = { "AMAZON APP STORE", "GOOGLE PLAY STORE" };
-        dialogBuilder.setItems(menuList, new DialogInterface.OnClickListener() {
+        menuAleart.setItems(menuList,new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
                 switch (item) {
                     case 0:
@@ -131,7 +131,8 @@ public abstract class BaseActivity extends ActionBarActivity {
                 }
             }
         });
-        dialogBuilder.create().show();
+        AlertDialog menuDrop = menuAleart.create();
+        menuDrop.show();
     }
 
     public void iconsets(View view) {

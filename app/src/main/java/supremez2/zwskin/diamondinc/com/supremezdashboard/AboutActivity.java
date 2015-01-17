@@ -3,8 +3,8 @@ package supremez2.zwskin.diamondinc.com.supremezdashboard;
 import android.app.Dialog;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -33,15 +33,14 @@ public class AboutActivity extends ActionBarActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
             YoYo.with(Techniques.FadeIn)
-                    .delay(400)
                     .interpolate(new AccelerateDecelerateInterpolator())
                     .duration(1700)
                     .playOn(findViewById(R.id.card_view1));
             YoYo.with(Techniques.FadeIn)
-                    .delay(400)
                     .interpolate(new AccelerateDecelerateInterpolator())
                     .duration(1700)
                     .playOn(findViewById(R.id.card_view2));
+
         }
 
         ImageView plustim = (ImageView) findViewById(R.id.gplus_tim);

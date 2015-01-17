@@ -25,7 +25,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/blue_grey_900">
+        android:background="#212121">
 
         <include
             android:id="@+id/toolbar"
@@ -36,12 +36,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/toolbar"
-            android:padding="1dp"
+            android:padding="2dp"
             android:clipToPadding="false"
             android:columnWidth="@dimen/item_width"
-            android:numColumns="2"
-            android:horizontalSpacing="1dp"
-            android:verticalSpacing="1dp"
+            android:numColumns="1"
+            android:horizontalSpacing="2dp"
+            android:verticalSpacing="2dp"
             android:stretchMode="columnWidth"
             android:textFilterEnabled="false"
             android:clickable="false"

@@ -7,7 +7,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     tools:context=".ActivityAbout"
-    android:background="@color/grey_white_1000">
+    android:background="#101010">
 
     <include
         android:id="@+id/toolbar"

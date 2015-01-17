@@ -36,6 +36,13 @@ public class DetailActivity extends BaseActivity {
         Picasso.with(this).load(getIntent().getStringExtra(EXTRA_IMAGE)).into(image);
     }
 
+    protected void onDestroy() {
+        super.onDestroy();
+        ImageView image = (ImageView) findViewById(R.id.image);
+        Picasso.with(this).cancelRequest(image);
+
+    }
+
     @Override protected int getLayoutResource() {
         return R.layout.activity_detail;
     }
