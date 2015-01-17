@@ -16,8 +16,11 @@
 
 package com.antonioleiva.materialeverywhere;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.graphics.Palette;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -30,8 +33,10 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+import supremez2.zwskin.diamondinc.com.supremezdashboard.PaletteTransformation;
 import supremez2.zwskin.diamondinc.com.supremezdashboard.R;
 
 
@@ -109,32 +114,26 @@ public class HomeActivity extends BaseActivity {
             final String imageUrl = "http://tbremer.pf-control.de/walls/" + String.valueOf(i + 1) + ".png";
             view.setTag(imageUrl);
             final ImageView image = (ImageView) view.findViewById(R.id.image);
+            final View view1 = findViewById(R.id.view);
 
 
 
             Picasso.with(view.getContext())
                     .load(imageUrl)
-                   // .fit()
-                   // .centerCrop()
-                   // .transform(PaletteTransformation.instance())
-                    .into(image);//, new Callback.EmptyCallback() {
+                    .fit().centerCrop()
+                    .transform(PaletteTransformation.instance())
+                    .into(image, new Callback.EmptyCallback() {
+                        @Override public void onSuccess() {
+                            Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap(); // Ew!
+                            Palette palette = PaletteTransformation.getPalette(bitmap);
+                            // TODO apply palette to text views, backgrounds, etc.
+                            Palette.Swatch vibrant =
+                                    palette.getVibrantSwatch();
+                            view1.setBackgroundColor(
+                                    vibrant.getRgb());
+                        }
+                    });
 
-                       // @Override
-                       // public void onSuccess() {
-                       //     ImageView imageView = (ImageView) findViewById(R.id.imageView7);
-
-                       //     Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();
-                       //     Palette palette = PaletteTransformation.getPalette(bitmap);
-
-                       //     PaletteLoader.with(image.getContext(), imageUrl)
-                       //             .load(palette)
-                       //             .setPaletteRequest(new PaletteRequest(
-                       //                    PaletteRequest.SwatchType.REGULAR_VIBRANT,
-                       //                    PaletteRequest.SwatchColor.BACKGROUND))
-                       //             .into(imageView.findViewById(R.id.imageView7)); //This was in your Palette example, but won't it change the background of the GridView? You can choose any view you want here to apply the color to.
-
-                        //}
-                    //});
 
             TextView text = (TextView) view.findViewById(R.id.textpalette);
             text.setText(getItem(i).toString());
