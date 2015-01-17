@@ -21,7 +21,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.graphics.Palette;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -36,9 +35,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
 
-import supremez2.zwskin.diamondinc.com.supremezdashboard.PaletteTransformation;
 import supremez2.zwskin.diamondinc.com.supremezdashboard.R;
 
 
@@ -95,7 +92,7 @@ public class HomeActivity extends BaseActivity {
 
 
         @Override public int getCount() {
-            return 38;
+            return 4;
         }
 
         @Override public Object getItem(int i) {
@@ -131,7 +128,7 @@ public class HomeActivity extends BaseActivity {
                             Palette.generateAsync(bitmap, new Palette.PaletteAsyncListener() {
                                 public void onGenerated(Palette palette) {
 
-                                    int bgColor = palette.getMutedColor(android.R.color.white);
+                                    int bgColor = palette.getVibrantColor(android.R.color.white);
                                     view1.setBackgroundColor(bgColor);
 
                                 }
