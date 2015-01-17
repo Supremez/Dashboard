@@ -125,15 +125,15 @@ public class HomeActivity extends BaseActivity {
             Picasso.with(view.getContext())
                     .load(imageUrl)
                     .fit().centerCrop()
-                    .transform(PaletteTransformation.instance())
                     .into(image, new Callback.EmptyCallback() {
                         @Override public void onSuccess() {
                             final Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();// Ew!
                             Palette.generateAsync(bitmap, new Palette.PaletteAsyncListener() {
                                 public void onGenerated(Palette palette) {
 
-                                    int bgColor = palette.getVibrantColor(android.R.color.white);
+                                    int bgColor = palette.getMutedColor(android.R.color.white);
                                     view1.setBackgroundColor(bgColor);
+
                                 }
                             });
                         }
