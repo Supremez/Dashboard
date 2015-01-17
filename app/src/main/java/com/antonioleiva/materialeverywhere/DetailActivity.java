@@ -14,6 +14,7 @@ import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.ViewCompat;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -108,7 +109,13 @@ public class DetailActivity extends BaseActivity {
 
     private void beginCrop(Uri source) {
         Uri outputUri = Uri.fromFile(new File(getCacheDir(), "cropped"));
-        new Crop(source).output(outputUri).start(this);
+
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+        int height = displaymetrics.heightPixels;
+        int width = displaymetrics.widthPixels;
+
+        new Crop(source).output(outputUri).withAspect(width, height).start(this);
     }
 
     private void handleCrop(int resultCode, Intent result) {
