@@ -7,10 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
@@ -27,11 +25,9 @@ import com.antonioleiva.materialeverywhere.uk.co.senab.photoview.PhotoViewAttach
 import com.soundcloud.android.crop.Crop;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 import supremez2.zwskin.diamondinc.com.supremezdashboard.R;
@@ -65,46 +61,7 @@ public class DetailActivity extends BaseActivity {
 
 
         });
-
-
-
-
     }
-
-    private Target target = new Target() {
-        @Override
-        public void onBitmapLoaded(final Bitmap bitmap, Picasso.LoadedFrom from) {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-
-                    File file = new File(Environment.getExternalStorageDirectory().getPath() +"/actress_wallpaper.jpg");
-                    try
-                    {
-                        file.createNewFile();
-                        FileOutputStream ostream = new FileOutputStream(file);
-                        bitmap.compress(Bitmap.CompressFormat.JPEG, 75, ostream);
-                        ostream.close();
-                    }
-                    catch (Exception e)
-                    {
-                        e.printStackTrace();
-                    }
-
-                }
-            }).start();
-        }
-        @Override
-        public void onBitmapFailed(Drawable errorDrawable) {
-        }
-
-        @Override
-        public void onPrepareLoad(Drawable placeHolderDrawable) {
-            if (placeHolderDrawable != null) {
-            }
-        }
-    };
-
 
 
 

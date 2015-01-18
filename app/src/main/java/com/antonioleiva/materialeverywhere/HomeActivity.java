@@ -16,11 +16,8 @@
 
 package com.antonioleiva.materialeverywhere;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.graphics.Palette;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -33,7 +30,6 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import supremez2.zwskin.diamondinc.com.supremezdashboard.R;
@@ -113,7 +109,7 @@ public class HomeActivity extends BaseActivity {
             final String imageUrl = "http://tbremer.pf-control.de/walls/" + String.valueOf(i + 1) + ".png";
             view.setTag(imageUrl);
             final ImageView image = (ImageView) view.findViewById(R.id.image);
-            final View view1 = findViewById(R.id.view);
+            //final View view1 = findViewById(R.id.view);
 
 
 
@@ -121,20 +117,20 @@ public class HomeActivity extends BaseActivity {
 
             Picasso.with(view.getContext())
                     .load(imageUrl)
-                    .fit().centerCrop()
-                    .into(image, new Callback.EmptyCallback() {
-                        @Override public void onSuccess() {
-                            final Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();// Ew!
-                            Palette.generateAsync(bitmap, new Palette.PaletteAsyncListener() {
-                                public void onGenerated(Palette palette) {
+                    //.fit().centerCrop()
+                    .into(image);//, new Callback.EmptyCallback() {
+                        //@Override public void onSuccess() {
+                          //  final Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();// Ew!
+                            //Palette.generateAsync(bitmap, new Palette.PaletteAsyncListener() {
+                              //  public void onGenerated(Palette palette) {
 
-                                    int bgColor = palette.getVibrantColor(android.R.color.white);
-                                    view1.setBackgroundColor(bgColor);
+                                //    int bgColor = palette.getVibrantColor(android.R.color.white);
+                                  //  view1.setBackgroundColor(bgColor);
 
-                                }
-                            });
-                        }
-                    });
+                                //}
+                            //});
+                        //}
+                    //});
 
 
 

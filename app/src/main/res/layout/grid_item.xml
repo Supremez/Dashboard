@@ -62,7 +62,8 @@
             android:layout_alignParentEnd="true"
             android:layout_alignBottom="@+id/textpalette"
             android:layout_alignTop="@+id/textpalette"
-            android:alpha="0.70" />
+            android:alpha="0.70"
+            android:background="@color/red_A400" />
 
         <TextView
             android:id="@+id/textpalette"
