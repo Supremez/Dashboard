@@ -88,7 +88,7 @@ public class HomeActivity extends BaseActivity {
 
 
         @Override public int getCount() {
-            return 38;
+            return 43;
         }
 
         @Override public Object getItem(int i) {
