@@ -88,7 +88,7 @@ public class DetailActivity extends BaseActivity {
         }
         if (id == R.id.set_wall) {
 
-            mImageView = (ImageView) findViewById(R.id.image);
+            mAttacher = new PhotoViewAttacher(mImageView);
             Bitmap mBitmap = ((BitmapDrawable)mImageView.getDrawable()).getBitmap();
 
             Uri tempUri = getImageUri(getApplicationContext(), mBitmap);
@@ -106,7 +106,7 @@ public class DetailActivity extends BaseActivity {
 
     public Uri getImageUri(Context inContext, Bitmap inImage) {
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        inImage.compress(Bitmap.CompressFormat.JPEG, 0, bytes);
         String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
         return Uri.parse(path);
     }
@@ -125,10 +125,11 @@ public class DetailActivity extends BaseActivity {
 
         DisplayMetrics displaymetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
-        //int height = displaymetrics.heightPixels;
-        //int width = displaymetrics.widthPixels;
+        int height = displaymetrics.heightPixels;
+        int width = displaymetrics.widthPixels;
 
-        new Crop(source).output(outputUri).start(this);
+
+        new Crop(source).output(outputUri).withMaxSize(width, height).start(this);
     }
 
     private void handleCrop(int resultCode, Intent result) {
