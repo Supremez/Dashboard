@@ -6,10 +6,11 @@ import android.app.WallpaperManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
@@ -19,14 +20,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.antonioleiva.materialeverywhere.uk.co.senab.photoview.PhotoViewAttacher;
 import com.soundcloud.android.crop.Crop;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import supremez2.zwskin.diamondinc.com.supremezdashboard.R;
@@ -36,6 +41,7 @@ public class DetailActivity extends BaseActivity {
 
     ImageView mImageView;
     PhotoViewAttacher mAttacher;
+    ProgressBar progressBar;
 
     public static final String EXTRA_IMAGE = "DetailActivity:image";
 
@@ -44,13 +50,63 @@ public class DetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         mImageView = (ImageView) findViewById(R.id.image);
+        progressBar = (ProgressBar) findViewById(R.id.loading);
         mAttacher = new PhotoViewAttacher(mImageView);
 
         ViewCompat.setTransitionName(mImageView, EXTRA_IMAGE);
-        Picasso.with(this).load(getIntent().getStringExtra(EXTRA_IMAGE)).into(mImageView);
+        Picasso.with(this).load(getIntent().getStringExtra(EXTRA_IMAGE)).into(mImageView, new Callback.EmptyCallback() {
+            @Override public void onSuccess() {
+                progressBar.setVisibility(View.GONE);
+            }
+            @Override
+            public void onError() {
+                progressBar.setVisibility(View.GONE);
+            }
+
+
+        });
+
+
 
 
     }
+
+    private Target target = new Target() {
+        @Override
+        public void onBitmapLoaded(final Bitmap bitmap, Picasso.LoadedFrom from) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+
+                    File file = new File(Environment.getExternalStorageDirectory().getPath() +"/actress_wallpaper.jpg");
+                    try
+                    {
+                        file.createNewFile();
+                        FileOutputStream ostream = new FileOutputStream(file);
+                        bitmap.compress(Bitmap.CompressFormat.JPEG, 75, ostream);
+                        ostream.close();
+                    }
+                    catch (Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+
+                }
+            }).start();
+        }
+        @Override
+        public void onBitmapFailed(Drawable errorDrawable) {
+        }
+
+        @Override
+        public void onPrepareLoad(Drawable placeHolderDrawable) {
+            if (placeHolderDrawable != null) {
+            }
+        }
+    };
+
+
+
 
     @Override protected int getLayoutResource() {
         return R.layout.activity_detail;
@@ -112,10 +168,10 @@ public class DetailActivity extends BaseActivity {
 
         DisplayMetrics displaymetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
-        int height = displaymetrics.heightPixels;
-        int width = displaymetrics.widthPixels;
+        //int height = displaymetrics.heightPixels;
+        //int width = displaymetrics.widthPixels;
 
-        new Crop(source).output(outputUri).withAspect(width, height).start(this);
+        new Crop(source).output(outputUri).start(this);
     }
 
     private void handleCrop(int resultCode, Intent result) {
