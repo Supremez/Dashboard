@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.ViewCompat;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -131,15 +132,20 @@ public class DetailActivity extends BaseActivity {
 
     private void beginCrop(Uri source) {
         Uri outputUri = Uri.parse("file:///sdcard/test.png");
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getRealMetrics(displaymetrics);
+
+        int height = displaymetrics.heightPixels;
+        int width = displaymetrics.widthPixels;
 
 
-        new Crop(source).output(outputUri).start(this);
+        new Crop(source).output(outputUri).withMaxSize(width,height).start(this);
     }
 
     private void handleCrop(int resultCode, Intent result) {
         if (resultCode == RESULT_OK) {
 
-            
+
 
             WallpaperManager myWallpaperManager = WallpaperManager
                     .getInstance(getApplicationContext());
