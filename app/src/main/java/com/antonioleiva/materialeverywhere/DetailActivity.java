@@ -146,6 +146,7 @@ public class DetailActivity extends BaseActivity {
         if (resultCode == RESULT_OK) {
 
 
+            mImageView.setImageURI(Crop.getOutput(result));
 
             WallpaperManager myWallpaperManager = WallpaperManager
                     .getInstance(getApplicationContext());
