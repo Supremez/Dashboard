@@ -97,17 +97,17 @@ public class DetailActivity extends BaseActivity {
             Bitmap bmp = getImageBitmap();
             OutputStream stream = null;
             try {
-                stream = new FileOutputStream("/sdcard/test.jpg");
+                stream = new FileOutputStream("/sdcard/test.png");
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
-            bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            bmp.compress(Bitmap.CompressFormat.PNG, 0, stream);
 
 
 
 
 
-            Uri tempUri = Uri.parse("file:///sdcard/test.jpg");
+            Uri tempUri = Uri.parse("file:///sdcard/test.png");
 
 
 
@@ -130,7 +130,7 @@ public class DetailActivity extends BaseActivity {
     }
 
     private void beginCrop(Uri source) {
-        Uri outputUri = Uri.parse("file:///sdcard/test.jpg");
+        Uri outputUri = Uri.parse("file:///sdcard/test.png");
 
 
         new Crop(source).output(outputUri).start(this);
@@ -139,7 +139,7 @@ public class DetailActivity extends BaseActivity {
     private void handleCrop(int resultCode, Intent result) {
         if (resultCode == RESULT_OK) {
 
-            mImageView.setImageURI(Crop.getOutput(result));
+            
 
             WallpaperManager myWallpaperManager = WallpaperManager
                     .getInstance(getApplicationContext());
