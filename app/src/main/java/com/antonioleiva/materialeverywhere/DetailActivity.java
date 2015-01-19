@@ -3,7 +3,6 @@
 package com.antonioleiva.materialeverywhere;
 
 import android.app.WallpaperManager;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -11,7 +10,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.ViewCompat;
@@ -28,7 +26,6 @@ import com.soundcloud.android.crop.Crop;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -108,7 +105,9 @@ public class DetailActivity extends BaseActivity {
 
 
 
-            Uri tempUri = getImageUri(getApplicationContext(), bmp);
+
+
+            Uri tempUri = Uri.parse("file:///sdcard/test.jpg");
 
 
 
@@ -121,13 +120,6 @@ public class DetailActivity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public Uri getImageUri(Context inContext, Bitmap inImage) {
-
-        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
-        return Uri.parse(path);
-    }
-
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent result) {
         if (requestCode == Crop.REQUEST_PICK && resultCode == RESULT_OK) {
@@ -138,7 +130,7 @@ public class DetailActivity extends BaseActivity {
     }
 
     private void beginCrop(Uri source) {
-        Uri outputUri = Uri.fromFile(new File(getCacheDir(), "cropped"));
+        Uri outputUri = Uri.parse("file:///sdcard/test.jpg");
 
 
         new Crop(source).output(outputUri).start(this);
