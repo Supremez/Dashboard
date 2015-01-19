@@ -6,14 +6,16 @@ import android.app.WallpaperManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.ViewCompat;
-import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,9 +28,11 @@ import com.soundcloud.android.crop.Crop;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 
 import supremez2.zwskin.diamondinc.com.supremezdashboard.R;
 
@@ -41,6 +45,8 @@ public class DetailActivity extends BaseActivity {
 
     public static final String EXTRA_IMAGE = "DetailActivity:image";
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +54,7 @@ public class DetailActivity extends BaseActivity {
         mImageView = (ImageView) findViewById(R.id.image);
         progressBar = (ProgressBar) findViewById(R.id.loading);
         mAttacher = new PhotoViewAttacher(mImageView);
+
 
         ViewCompat.setTransitionName(mImageView, EXTRA_IMAGE);
         Picasso.with(this).load(getIntent().getStringExtra(EXTRA_IMAGE)).into(mImageView, new Callback.EmptyCallback() {
@@ -88,10 +95,20 @@ public class DetailActivity extends BaseActivity {
         }
         if (id == R.id.set_wall) {
 
-            mAttacher = new PhotoViewAttacher(mImageView);
-            Bitmap mBitmap = ((BitmapDrawable)mImageView.getDrawable()).getBitmap();
+            mImageView = (ImageView) findViewById(R.id.image);
 
-            Uri tempUri = getImageUri(getApplicationContext(), mBitmap);
+            Bitmap bmp = getImageBitmap();
+            OutputStream stream = null;
+            try {
+                stream = new FileOutputStream("/sdcard/test.jpg");
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+
+
+
+            Uri tempUri = getImageUri(getApplicationContext(), bmp);
 
 
 
@@ -105,11 +122,11 @@ public class DetailActivity extends BaseActivity {
     }
 
     public Uri getImageUri(Context inContext, Bitmap inImage) {
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        inImage.compress(Bitmap.CompressFormat.JPEG, 0, bytes);
+
         String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
         return Uri.parse(path);
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent result) {
@@ -123,13 +140,8 @@ public class DetailActivity extends BaseActivity {
     private void beginCrop(Uri source) {
         Uri outputUri = Uri.fromFile(new File(getCacheDir(), "cropped"));
 
-        DisplayMetrics displaymetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
-        int height = displaymetrics.heightPixels;
-        int width = displaymetrics.widthPixels;
 
-
-        new Crop(source).output(outputUri).withMaxSize(width, height).start(this);
+        new Crop(source).output(outputUri).start(this);
     }
 
     private void handleCrop(int resultCode, Intent result) {
@@ -142,7 +154,7 @@ public class DetailActivity extends BaseActivity {
 
             try {
 
-                Bitmap mBitmap = ((BitmapDrawable)mImageView.getDrawable()).getBitmap();
+                Bitmap mBitmap = getImageBitmap();
                 myWallpaperManager.setBitmap(mBitmap);
                 Toast.makeText(DetailActivity.this, "Wallpaper set",
                         Toast.LENGTH_SHORT).show();
@@ -167,6 +179,26 @@ public class DetailActivity extends BaseActivity {
         intent.putExtra(EXTRA_IMAGE, url);
         ActivityCompat.startActivity(activity, intent, options.toBundle());
     }
+
+    public Bitmap getImageBitmap () {
+        try {
+            final Drawable drawable = this.mImageView.getDrawable();
+            if (drawable instanceof BitmapDrawable) {
+                return ((BitmapDrawable) drawable).getBitmap();
+            }
+
+            Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(bitmap);
+            drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+            drawable.draw(canvas);
+            return bitmap;
+        } catch (Exception e) {
+            Log.e(EXTRA_IMAGE, "", e);
+            return null;
+        }
+    }
+
+
 
 
 }
