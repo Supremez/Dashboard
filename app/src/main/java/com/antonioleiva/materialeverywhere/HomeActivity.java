@@ -16,8 +16,11 @@
 
 package com.antonioleiva.materialeverywhere;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.graphics.Palette;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -30,6 +33,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import supremez2.zwskin.diamondinc.com.supremezdashboard.R;
@@ -99,50 +103,66 @@ public class HomeActivity extends BaseActivity {
             return i;
         }
 
-        @Override public View getView(int i, View view, ViewGroup viewGroup) {
+        @Override public View getView(int i, View convertView, ViewGroup viewGroup) {
 
-            if (view == null) {
-                view = LayoutInflater.from(viewGroup.getContext())
-                        .inflate(R.layout.grid_item, viewGroup, false);
+
+            final ViewHolder viewHolder;
+
+            if (convertView == null) {
+
+                convertView = LayoutInflater.from(viewGroup.getContext()).inflate(
+                        R.layout.grid_item, viewGroup, false);
+
+                viewHolder = new ViewHolder();
+                viewHolder.image = (ImageView) convertView.findViewById(R.id.image);
+                viewHolder.view = convertView.findViewById(R.id.view);
+                viewHolder.text = (TextView) convertView.findViewById(R.id.textpalette);
+
+                convertView.setTag(viewHolder);
+
+            } else {
+
+                viewHolder = (ViewHolder) convertView.getTag();
             }
 
             final String imageUrl = "http://tbremer.pf-control.de/walls/" + String.valueOf(i + 1) + ".png";
-            view.setTag(imageUrl);
-            final ImageView image = (ImageView) view.findViewById(R.id.image);
-            //final View view1 = findViewById(R.id.view);
+//            convertView.setTag(imageUrl);
+
+            viewHolder.text.setText(getItem(i).toString());
 
 
-
-
-
-            Picasso.with(view.getContext())
+            Picasso.with(convertView.getContext())
                     .load(imageUrl)
-                    //.fit().centerCrop()
-                    .into(image);//, new Callback.EmptyCallback() {
-                        //@Override public void onSuccess() {
-                          //  final Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();// Ew!
-                            //Palette.generateAsync(bitmap, new Palette.PaletteAsyncListener() {
-                              //  public void onGenerated(Palette palette) {
+                    .fit().centerCrop()
+                    .into(viewHolder.image, new Callback.EmptyCallback() {
+                        @Override public void onSuccess() {
+                            final Bitmap bitmap = ((BitmapDrawable) viewHolder.image.getDrawable()).getBitmap();// Ew!
+                            Palette.generateAsync(bitmap, new Palette.PaletteAsyncListener() {
+                                public void onGenerated(Palette palette) {
 
-                                //    int bgColor = palette.getVibrantColor(android.R.color.white);
-                                  //  view1.setBackgroundColor(bgColor);
+                                    if (palette != null) {
 
-                                //}
-                            //});
-                        //}
-                    //});
+                                        Palette.Swatch vibrantSwatch = palette.getVibrantSwatch();
 
+                                        if (vibrantSwatch != null) {
+                                            viewHolder.view.setBackgroundColor(vibrantSwatch.getRgb());
+                                            viewHolder.text.setTextColor(vibrantSwatch.getTitleTextColor());
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    });
 
-
-            TextView text = (TextView) view.findViewById(R.id.textpalette);
-            text.setText(getItem(i).toString());
-
-
-
-            return view;
+            return convertView;
         }
     }
 
+    static class ViewHolder {
+        ImageView image;
+        TextView text;
+        View view;
+    }
 
 
 
