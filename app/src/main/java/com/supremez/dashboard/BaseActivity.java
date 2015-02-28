@@ -1,10 +1,8 @@
-package supremez2.zwskin.diamondinc.com.supremezdashboard;
+package com.supremez.dashboard;
 
-
-import android.content.Context;
 
 import android.app.AlertDialog;
-
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -32,9 +30,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
-import uk.co.chrisjenx.calligraphy.CalligraphyUtils;
 
 
 public abstract class BaseActivity extends ActionBarActivity {

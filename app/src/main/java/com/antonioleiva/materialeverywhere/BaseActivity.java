@@ -21,7 +21,8 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 
-import supremez2.zwskin.diamondinc.com.supremezdashboard.R;
+import com.supremez.dashboard.R;
+
 
 public abstract class BaseActivity extends ActionBarActivity {
 

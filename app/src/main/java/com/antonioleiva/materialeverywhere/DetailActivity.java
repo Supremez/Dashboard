@@ -26,13 +26,13 @@ import com.antonioleiva.materialeverywhere.uk.co.senab.photoview.PhotoViewAttach
 import com.soundcloud.android.crop.Crop;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
+import com.supremez.dashboard.R;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import supremez2.zwskin.diamondinc.com.supremezdashboard.R;
 
 
 public class DetailActivity extends BaseActivity {

@@ -16,7 +16,6 @@
 
 package com.antonioleiva.materialeverywhere;
 
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
@@ -37,8 +36,7 @@ import android.widget.TextView;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
-
-import supremez2.zwskin.diamondinc.com.supremezdashboard.R;
+import com.supremez.dashboard.R;
 
 
 public class HomeActivity extends BaseActivity {

@@ -1,4 +1,4 @@
-package supremez2.zwskin.diamondinc.com.supremezdashboard;
+package com.supremez.dashboard;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -42,7 +42,7 @@ public class MainActivity extends BaseActivity {
         }
 
         if (id == R.id.action_about) {
-            Intent intent = new Intent(this, supremez2.zwskin.diamondinc.com.supremezdashboard.AboutActivity.class);
+            Intent intent = new Intent(this, AboutActivity.class);
             startActivity(intent);
             return true;
         }

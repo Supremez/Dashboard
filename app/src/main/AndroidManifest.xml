@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="supremez2.zwskin.diamondinc.com.supremezdashboard" >
+    package="com.supremez.dashboard" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -14,12 +14,12 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
-        android:name=".CalligraphyApplication" >
+        android:name="com.supremez.dashboard.CalligraphyApplication" >
 
         <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.supremez.dashboard.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -65,16 +65,16 @@
             android:parentActivityName="com.antonioleiva.materialeverywhere.HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.supremez.dashboard.MainActivity" />
         </activity>
         <activity
-            android:name=".AboutActivity"
+            android:name="com.supremez.dashboard.AboutActivity"
             android:label="@string/title_activity_about"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.supremez.dashboard.MainActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="supremez2.zwskin.diamondinc.com.supremezdashboard.MainActivity" />
+                android:value="com.supremez.dashboard.MainActivity" />
         </activity>
 
 

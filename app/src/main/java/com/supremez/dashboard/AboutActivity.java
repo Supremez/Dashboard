@@ -1,4 +1,4 @@
-package supremez2.zwskin.diamondinc.com.supremezdashboard;
+package com.supremez.dashboard;
 
 import android.app.Dialog;
 import android.content.Intent;

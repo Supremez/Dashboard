@@ -15,8 +15,6 @@
  *******************************************************************************/
 package com.antonioleiva.materialeverywhere.uk.co.senab.photoview.log;
 
-import android.util.Log;
-
 /**
  * class that holds the {@link Logger} for this library, defaults to {@link LoggerDefault} to send logs to android {@link android.util.Log}
  */

@@ -10,7 +10,7 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "supremez2.zwskin.diamondinc.com.supremezdashboard"
+        applicationId "com.supremez.dashboard"
         minSdkVersion 19
         targetSdkVersion 21
         versionCode 1
