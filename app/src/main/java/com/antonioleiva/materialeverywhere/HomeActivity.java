@@ -77,8 +77,8 @@ public class HomeActivity extends BaseActivity {
     }
 
 
-
-    @Override protected int getLayoutResource() {
+    @Override
+    protected int getLayoutResource() {
         return R.layout.activity_home;
     }
 
@@ -100,22 +100,32 @@ public class HomeActivity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    static class ViewHolder {
+        ImageView image;
+        TextView text;
+        View view;
+    }
+
     private class GridViewAdapter extends BaseAdapter {
 
 
-        @Override public int getCount() {
+        @Override
+        public int getCount() {
             return 43;
         }
 
-        @Override public Object getItem(int i) {
+        @Override
+        public Object getItem(int i) {
             return "WALL " + String.valueOf(i + 1);
         }
 
-        @Override public long getItemId(int i) {
+        @Override
+        public long getItemId(int i) {
             return i;
         }
 
-        @Override public View getView(int i, View convertView, ViewGroup viewGroup) {
+        @Override
+        public View getView(int i, View convertView, ViewGroup viewGroup) {
 
 
             final ViewHolder viewHolder;
@@ -147,7 +157,8 @@ public class HomeActivity extends BaseActivity {
                     .load(imageUrl)
                     .fit().centerCrop()
                     .into(viewHolder.image, new Callback.EmptyCallback() {
-                        @Override public void onSuccess() {
+                        @Override
+                        public void onSuccess() {
                             final Bitmap bitmap = ((BitmapDrawable) viewHolder.image.getDrawable()).getBitmap();// Ew!
                             Palette.generateAsync(bitmap, new Palette.PaletteAsyncListener() {
                                 public void onGenerated(Palette palette) {
@@ -169,15 +180,6 @@ public class HomeActivity extends BaseActivity {
             return convertView;
         }
     }
-
-    static class ViewHolder {
-        ImageView image;
-        TextView text;
-        View view;
-    }
-
-
-
 
 
 }

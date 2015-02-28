@@ -26,8 +26,8 @@ import com.supremez.dashboard.R;
 
 public abstract class BaseActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
     SharedPreferences prefs = null;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

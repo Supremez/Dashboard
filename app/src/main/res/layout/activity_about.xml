@@ -5,16 +5,16 @@
     android:id="@+id/container"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context=".ActivityAbout"
-    android:background="#101010">
+    android:background="#101010"
+    tools:context=".ActivityAbout">
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"/>
+        layout="@layout/toolbar" />
 
     <include
         android:id="@+id/scroll_about"
-        layout="@layout/scroll_about"/>
+        layout="@layout/scroll_about" />
 
 
 </RelativeLayout>

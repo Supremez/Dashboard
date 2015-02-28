@@ -21,7 +21,7 @@
         <item name="windowActionBar">false</item>
     </style>
 
-    <style name="ActionBarPopupThemeOverlay" parent="ThemeOverlay.AppCompat.Light" >
+    <style name="ActionBarPopupThemeOverlay" parent="ThemeOverlay.AppCompat.Light">
         <item name="android:background">#fff</item>
         <item name="android:textColor">#000</item>
     </style>
@@ -29,9 +29,9 @@
     <style name="AppTheme.Widget.TextView" parent="android:Widget.Holo.Light.TextView">
         <item name="fontPath">fonts/Roboto-Regular.ttf</item>
     </style>
-    
-<style name="Font">
-    <item name="fontPath">fonts/Roboto-Regular.ttf</item>
-</style>
+
+    <style name="Font">
+        <item name="fontPath">fonts/Roboto-Regular.ttf</item>
+    </style>
 
 </resources>

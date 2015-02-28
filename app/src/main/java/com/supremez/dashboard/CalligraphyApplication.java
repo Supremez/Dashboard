@@ -11,7 +11,6 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 public class CalligraphyApplication extends Application {
 
 
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -21,7 +20,6 @@ public class CalligraphyApplication extends Application {
                         .build()
         );
     }
-
 
 
 }
