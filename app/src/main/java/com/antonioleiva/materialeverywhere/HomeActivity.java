@@ -16,6 +16,7 @@
 
 package com.antonioleiva.materialeverywhere;
 
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
@@ -33,6 +34,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -48,6 +50,7 @@ public class HomeActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         setActionBarIcon(R.drawable.ic_ab_drawer);
         GridView gridView = (GridView) findViewById(R.id.gridView);
         gridView.setAdapter(new GridViewAdapter());
@@ -62,6 +65,17 @@ public class HomeActivity extends BaseActivity {
 
         drawer = (DrawerLayout) findViewById(R.id.drawer);
         drawer.setDrawerShadow(R.drawable.drawer_shadow, Gravity.START);
+
+        //TODO Customize Dialog
+        if (prefs.getBoolean("firstrun", true)) {
+            new MaterialDialog.Builder(this)
+                    .title("Loading")
+                    .content("It may take some time for the wallpapers to load. We're sorry for that but don't worry, this is just for the first start. After that the wallpapers are stored in the cache. Go and get some cookies :)")
+                    .positiveText("Okay.")
+                    .show();
+            prefs.edit().putBoolean("firstrun", false).apply();
+        }
+
     }
 
 
