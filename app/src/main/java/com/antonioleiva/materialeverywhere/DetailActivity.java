@@ -136,8 +136,12 @@ public class DetailActivity extends BaseActivity {
         int height = displaymetrics.heightPixels;
         int width = displaymetrics.widthPixels;
 
+<<<<<<< HEAD
 
         new Crop(source).output(outputUri).withMaxSize(width, height).start(this);
+=======
+        Crop.of(source, outputUri).withMaxSize(width,height).start(this);
+>>>>>>> master
     }
 
     private void handleCrop(int resultCode, Intent result) {
