@@ -14,13 +14,12 @@
   ~ limitations under the License.
   -->
 
-<android.support.v4.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".HomeActivity"
     android:id="@+id/drawer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -29,23 +28,23 @@
 
         <include
             android:id="@+id/toolbar"
-            layout="@layout/toolbar"/>
+            layout="@layout/toolbar" />
 
         <GridView
             android:id="@+id/gridView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/toolbar"
-            android:padding="2dp"
+            android:clickable="false"
             android:clipToPadding="false"
             android:columnWidth="@dimen/item_width"
-            android:numColumns="2"
             android:horizontalSpacing="2dp"
-            android:verticalSpacing="2dp"
+            android:numColumns="2"
+            android:padding="2dp"
+            android:scrollbars="none"
             android:stretchMode="columnWidth"
             android:textFilterEnabled="false"
-            android:clickable="false"
-            android:scrollbars="none"/>
+            android:verticalSpacing="2dp" />
 
     </RelativeLayout>
 

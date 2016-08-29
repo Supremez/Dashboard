@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context=".MyActivity"
-    xmlns:fab="http://schemas.android.com/apk/res-auto"
-    android:background="@color/grey_white_1000">
+    android:background="@color/grey_white_1000"
+    tools:context=".MyActivity">
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"/>
+        layout="@layout/toolbar" />
 
     <include
         android:id="@+id/scroll"
-        layout="@layout/scroll_light"/>
+        layout="@layout/scroll_light" />
 
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:fab="http://schemas.android.com/apk/res-auto"
@@ -28,12 +27,12 @@
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
             android:layout_margin="20dp"
             android:src="@drawable/ic_collections_white_36dp"
             fab:fab_colorNormal="@color/pink_A400"
             fab:fab_colorPressed="@color/pink_600"
-            fab:fab_colorRipple="@color/grey_white_1000"
-            android:layout_gravity="bottom|right" />
+            fab:fab_colorRipple="@color/grey_white_1000" />
     </FrameLayout>
 
 </RelativeLayout>

@@ -12,8 +12,8 @@ import java.io.IOException;
 /**
  * <b>This class uses Threads</b>
  * An alternative to this class would be to use an ASyncTask
- * @author blundell
  *
+ * @author blundell
  */
 public class HeavyLifter {
 
@@ -26,7 +26,8 @@ public class HeavyLifter {
 
     /**
      * Setup the HeavyLifter
-     * @param context the context we are running in - typically an activity
+     *
+     * @param context  the context we are running in - typically an activity
      * @param callback the handler you want to be notified when we finish doing an operation
      */
     public HeavyLifter(Context context, Handler callback) {

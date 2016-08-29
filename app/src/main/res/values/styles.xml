@@ -14,11 +14,10 @@
     </style>
 
 
-    <style name="ActionBarPopupThemeOverlay" parent="ThemeOverlay.AppCompat.Light" >
+    <style name="ActionBarPopupThemeOverlay" parent="ThemeOverlay.AppCompat.Light">
         <item name="android:background">#fff</item>
         <item name="android:textColor">#000</item>
     </style>
 
-    
 
 </resources>

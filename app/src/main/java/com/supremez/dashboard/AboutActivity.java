@@ -1,4 +1,4 @@
-package supremez2.zwskin.diamondinc.com.supremezdashboard;
+package com.supremez.dashboard;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -68,7 +68,7 @@ public class AboutActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                        "mailto","tbremer19@gmail.com", null));
+                        "mailto", "tbremer19@gmail.com", null));
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "SUBJECT");
                 startActivity(Intent.createChooser(emailIntent, "Choose email app"));
             }

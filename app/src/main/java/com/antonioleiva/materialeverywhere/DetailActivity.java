@@ -1,5 +1,3 @@
-
-
 package com.antonioleiva.materialeverywhere;
 
 import android.app.WallpaperManager;
@@ -26,24 +24,29 @@ import com.antonioleiva.materialeverywhere.uk.co.senab.photoview.PhotoViewAttach
 import com.soundcloud.android.crop.Crop;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
+import com.supremez.dashboard.R;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import supremez2.zwskin.diamondinc.com.supremezdashboard.R;
-
 
 public class DetailActivity extends BaseActivity {
 
+    public static final String EXTRA_IMAGE = "DetailActivity:image";
     ImageView mImageView;
     PhotoViewAttacher mAttacher;
     ProgressBar progressBar;
 
-    public static final String EXTRA_IMAGE = "DetailActivity:image";
-
-
+    public static void launch(BaseActivity activity, View transitionView, String url) {
+        ActivityOptionsCompat options =
+                ActivityOptionsCompat.makeSceneTransitionAnimation(
+                        activity, transitionView, EXTRA_IMAGE);
+        Intent intent = new Intent(activity, DetailActivity.class);
+        intent.putExtra(EXTRA_IMAGE, url);
+        ActivityCompat.startActivity(activity, intent, options.toBundle());
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,9 +59,11 @@ public class DetailActivity extends BaseActivity {
 
         ViewCompat.setTransitionName(mImageView, EXTRA_IMAGE);
         Picasso.with(this).load(getIntent().getStringExtra(EXTRA_IMAGE)).into(mImageView, new Callback.EmptyCallback() {
-            @Override public void onSuccess() {
+            @Override
+            public void onSuccess() {
                 progressBar.setVisibility(View.GONE);
             }
+
             @Override
             public void onError() {
                 progressBar.setVisibility(View.GONE);
@@ -68,12 +73,10 @@ public class DetailActivity extends BaseActivity {
         });
     }
 
-
-
-    @Override protected int getLayoutResource() {
+    @Override
+    protected int getLayoutResource() {
         return R.layout.activity_detail;
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -105,15 +108,10 @@ public class DetailActivity extends BaseActivity {
             bmp.compress(Bitmap.CompressFormat.PNG, 0, stream);
 
 
-
-
-
             Uri tempUri = Uri.parse("file:///sdcard/test.png");
 
 
-
             beginCrop(tempUri);
-
 
 
         }
@@ -138,7 +136,16 @@ public class DetailActivity extends BaseActivity {
         int height = displaymetrics.heightPixels;
         int width = displaymetrics.widthPixels;
 
+<<<<<<< HEAD
         Crop.of(source, outputUri).withMaxSize(width,height).start(this);
+=======
+<<<<<<< HEAD
+
+        new Crop(source).output(outputUri).withMaxSize(width, height).start(this);
+=======
+        Crop.of(source, outputUri).withMaxSize(width,height).start(this);
+>>>>>>> master
+>>>>>>> test
     }
 
     private void handleCrop(int resultCode, Intent result) {
@@ -168,17 +175,7 @@ public class DetailActivity extends BaseActivity {
         }
     }
 
-
-    public static void launch(BaseActivity activity, View transitionView, String url) {
-        ActivityOptionsCompat options =
-                ActivityOptionsCompat.makeSceneTransitionAnimation(
-                        activity, transitionView, EXTRA_IMAGE);
-        Intent intent = new Intent(activity, DetailActivity.class);
-        intent.putExtra(EXTRA_IMAGE, url);
-        ActivityCompat.startActivity(activity, intent, options.toBundle());
-    }
-
-    public Bitmap getImageBitmap () {
+    public Bitmap getImageBitmap() {
         try {
             final Drawable drawable = this.mImageView.getDrawable();
             if (drawable instanceof BitmapDrawable) {
@@ -195,8 +192,6 @@ public class DetailActivity extends BaseActivity {
             return null;
         }
     }
-
-
 
 
 }

@@ -1,10 +1,8 @@
-package supremez2.zwskin.diamondinc.com.supremezdashboard;
+package com.supremez.dashboard;
 
-
-import android.content.Context;
 
 import android.app.AlertDialog;
-
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -32,9 +30,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
-import uk.co.chrisjenx.calligraphy.CalligraphyUtils;
 
 
 public abstract class BaseActivity extends ActionBarActivity {
@@ -67,7 +63,6 @@ public abstract class BaseActivity extends ActionBarActivity {
         }
 
 
-
         ScrollView scrollView = (ScrollView) findViewById(R.id.scroll);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
@@ -75,16 +70,15 @@ public abstract class BaseActivity extends ActionBarActivity {
 
         fab.setOnClickListener(new View.OnClickListener() {
 
-           public void onClick(View v) {
+            public void onClick(View v) {
 
 
-               //For example: Start Wallpaper Home Activity
-               Intent intent=new Intent(v.getContext(),com.antonioleiva.materialeverywhere.HomeActivity.class);
-               startActivity(intent);
+                //For example: Start Wallpaper Home Activity
+                Intent intent = new Intent(v.getContext(), com.antonioleiva.materialeverywhere.HomeActivity.class);
+                startActivity(intent);
 
-           }
-       });
-
+            }
+        });
 
 
     }
@@ -95,7 +89,7 @@ public abstract class BaseActivity extends ActionBarActivity {
     }
 
     public void wallpaper(View view) {
-      Intent intent = new Intent(this, com.antonioleiva.materialeverywhere.HomeActivity.class);
+        Intent intent = new Intent(this, com.antonioleiva.materialeverywhere.HomeActivity.class);
         startActivity(intent);
     }
 
@@ -113,8 +107,8 @@ public abstract class BaseActivity extends ActionBarActivity {
 
     {
         final AlertDialog.Builder menuAleart = new AlertDialog.Builder(this);
-        final String[] menuList = { "AMAZON APP STORE", "GOOGLE PLAY STORE" };
-        menuAleart.setItems(menuList,new DialogInterface.OnClickListener() {
+        final String[] menuList = {"AMAZON APP STORE", "GOOGLE PLAY STORE"};
+        menuAleart.setItems(menuList, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
                 switch (item) {
                     case 0:
@@ -184,18 +178,6 @@ public abstract class BaseActivity extends ActionBarActivity {
         return app_installed;
     }
 
-    private class RepairSkinAsyncTask extends AsyncTask<Void, Void, Void> {
-        @Override
-        protected Void doInBackground(Void... nothing) {
-            String SDCARD_MYAPK_APK = Environment.getExternalStorageDirectory()
-                    .getPath() + File.separator + "temporary92384534$.apk";
-            deleteOldSkin(SDCARD_MYAPK_APK);
-            saveSkinToSdCard(SDCARD_MYAPK_APK);
-            startAppInstaller(SDCARD_MYAPK_APK);
-            return null;
-        }
-    }
-
     private void showInstallableSkins() {
         if (isSDcardAvailable()) {
             new RepairSkinAsyncTask().execute();
@@ -258,8 +240,19 @@ public abstract class BaseActivity extends ActionBarActivity {
                 || state.contentEquals(Environment.MEDIA_MOUNTED_READ_ONLY);
     }
 
-
     protected abstract int getLayoutResource();
+
+    private class RepairSkinAsyncTask extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... nothing) {
+            String SDCARD_MYAPK_APK = Environment.getExternalStorageDirectory()
+                    .getPath() + File.separator + "temporary92384534$.apk";
+            deleteOldSkin(SDCARD_MYAPK_APK);
+            saveSkinToSdCard(SDCARD_MYAPK_APK);
+            startAppInstaller(SDCARD_MYAPK_APK);
+            return null;
+        }
+    }
 
 
 }
