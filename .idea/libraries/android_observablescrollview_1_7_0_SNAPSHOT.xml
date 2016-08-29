@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="android-observablescrollview-1.7.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.ksoichiro/android-observablescrollview/1.7.0-SNAPSHOT/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.ksoichiro/android-observablescrollview/1.7.0-SNAPSHOT/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ksoichiro/android-observablescrollview/1.7.0-SNAPSHOT/784805bf3cbe2b1d760d072a2934f1b03625de1e/android-observablescrollview-1.7.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
